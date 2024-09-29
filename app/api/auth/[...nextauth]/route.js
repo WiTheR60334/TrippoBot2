@@ -5,7 +5,7 @@ import User from "@/models/User";
 import connectDB from "@/util/DB";
 import bcrypt from "bcryptjs";
 
-export const authOptions = {
+const authOptions = {
   providers: [
     // Google Provider for OAuth
     GoogleProvider({
