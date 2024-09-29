@@ -116,7 +116,7 @@ const PricingCard = ({
             : pricingData.title === "Trippo Gold"
             ? "text-yellow-300"
             : pricingData.title === "Trippo Diamond"
-            ? "text-[#47c8e8]"
+            ? "text-green-400"
             : "text-white" // Fallback color
         }`}
       >
@@ -174,7 +174,7 @@ const Pricing = () => {
   const generic = pricingDataAll.generic;
 
   return (
-    <div className="bg-[var(--g)] outfit mesh-dark min-w-full p-8 md:p-16">
+    <div className="bg-[var(--g)] mt-[5%] outfit mesh-dark min-w-full min-h-screen p-8 md:p-16">
       <h5 className="text-2xl md:text-3xl tracking-tight text-[var(--lb)] font-medium">
         Want to chat more and more?
       </h5>
