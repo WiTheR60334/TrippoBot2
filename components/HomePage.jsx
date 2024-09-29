@@ -122,7 +122,7 @@ export default function HomePage() {
           </div>
           <div className="flex flex-col space-y-4">
             {/* Travel Reminders & Alerts */}
-            <div className="bg-gray-100 p-6 md:p-8 rounded-xl flex-col md:flex items-center">
+            <div className="bg-gray-100 p-6 md:p-8 rounded-xl flex-row md:flex items-center">
               <div className="flex justify-center md:mr-4 md:m-0 m-4">
                 <img
                   src="/Group 3.svg"
@@ -142,7 +142,7 @@ export default function HomePage() {
             </div>
 
             {/* FAQs & Support */}
-            <div className="bg-gray-100 p-6 md:p-8 rounded-xl flex-col md:flex md:flex-inline items-center">
+            <div className="bg-gray-100 p-6 md:p-8 rounded-xl flex-row md:flex md:flex-inline items-center">
               <div className="flex justify-center md:mr-4 md:m-0 m-4">
                 <img
                   src="/Group 5.svg"
