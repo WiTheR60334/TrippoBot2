@@ -34,6 +34,19 @@
       transparent 50%
     );
 }
+.mesh-diamond {
+  background-color: hsla(34, 0%, 100%, 1);
+
+  background-image: radial-gradient(at 69% 100%, #47c8e8b5 0px, transparent 50%),
+    radial-gradient(at 39% 99%, #47e8b0a7 0px, transparent 50%);
+
+  /* background-image: radial-gradient(
+      at 69% 100%,
+      rgba(255, 226, 123, 0.822) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 39% 99%, rgba(231, 169, 75, 0.748) 0px, transparent 50%); */
+}
 
 .mesh-price {
   background-color: hsla(212, 0%, 96%, 1);

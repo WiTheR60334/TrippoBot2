@@ -8,6 +8,9 @@ import {
   AiOutlineCopy,
 } from "react-icons/ai";
 import ReactMarkdown from 'react-markdown';
+const handleDiamond = () => {
+  window.location.href = "/chat-diamond";
+};
 export default function ChatBotGold() {
   const [messages, setMessages] = useState([
     { text: "Hello! How can I assist you today?", sender: "bot" },
@@ -100,7 +103,7 @@ export default function ChatBotGold() {
                 className={`mb-3 md:p-3 p-2 rounded-xl border-[0.5px] border-gray-300 md:max-w-[60%] max-w-[90%] relative group transition-transform duration-300 ease-in-out ${
                   msg.sender === "user"
                     ? "bg-white text-[var(--g)] self-end ml-auto animate-slideUp"
-                    : "bg-white text-[#e0aa3e] animate-slideDown"
+                    : "bg-white text-[var(--lg)] animate-slideDown"
                 }`}
               >
                 <ReactMarkdown>{msg.text}</ReactMarkdown>
@@ -147,6 +150,15 @@ export default function ChatBotGold() {
           Trippo GOLD
         </a>
       </h5> */}
+      <h5 className="text-md md:text-xl text-center px-4 py-2 mt-4 bg-white rounded-full tracking-tight text-[var(--g)] font-medium">
+        Need more accuracy? Try
+        <a
+          className="text-[var(--b)] pl-2 hover:text-[var(--gr)] cursor-pointer rounded-xl bg-none"
+          onClick={handleDiamond}
+        >
+          Trippo Diamond
+        </a>
+      </h5>
     </div>
   );
 }

@@ -1,16 +1,31 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Navbar() {
   const handleHome = () => {
     window.location.href = "/home";
   };
 
+  const [isOpen, setIsOpen] = useState(false); // State to manage dropdown visibility
+
+  const toggleDropdown = () => {
+    setIsOpen((prevState) => !prevState); // Toggle dropdown visibility
+  };
+
   const handleChat = () => {
     window.location.href = "/chat";
   };
+  const handleChatGold = () => {
+    window.location.href = "/chat-gold";
+  };
+  const handleChatDiamond = () => {
+    window.location.href = "/chat-diamond";
+  };
+  const handleLogin = () => {
+    window.location.href = "/login";
+  };
 
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -55,12 +70,37 @@ export default function Navbar() {
       >
         <ul className="flex flex-col md:flex-row p-0 md:p-0">
           <li
-            className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300 rounded-l-full"
-            onClick={handleChat}
+            className="relative cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300 rounded-l-full px-6 py-2"
+            onClick={toggleDropdown} // Toggle dropdown on click
           >
             Chat
+            {isOpen && ( // Conditional rendering of dropdown
+              <ul className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 shadow-lg rounded-md z-10">
+                <li
+                  className="px-4 py-2 cursor-pointer text-gray-700 hover:bg-[var(--g)] hover:text-white"
+                  onClick={handleChat}
+                >
+                  Standard
+                </li>
+                <li
+                  className="px-4 py-2 cursor-pointer text-gray-700 hover:bg-[var(--g)] hover:text-white"
+                  onClick={handleChatGold}
+                >
+                  Gold
+                </li>
+                <li
+                  className="px-4 py-2 cursor-pointer text-gray-700 hover:bg-[var(--g)] hover:text-white"
+                  onClick={handleChatDiamond}
+                >
+                  Diamond
+                </li>
+              </ul>
+            )}
           </li>
-          <li className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300">
+          <li
+            className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300 "
+            onClick={handleChat}
+          >
             Pricing
           </li>
           <li className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300">
@@ -69,7 +109,10 @@ export default function Navbar() {
           <li className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300">
             Rentals
           </li>
-          <li className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300 rounded-r-full">
+          <li
+            className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300 rounded-r-full"
+            onClick={handleLogin}
+          >
             Log in
           </li>
         </ul>

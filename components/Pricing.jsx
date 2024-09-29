@@ -89,10 +89,8 @@ const pricingDataAll = {
 
 const PricingCard = ({
   pricingData,
-  common,
   generic,
-  isFeatured,
-  background,
+  backgroundColor, // Added background color prop
 }) => {
   const [dollar, cent] = pricingData.price.toFixed(2).split(".");
 
@@ -109,9 +107,19 @@ const PricingCard = ({
   return (
     <div
       className={`pricingCard mesh-price transition-transform transform hover:scale-105 duration-300 ease-in-out 
-        shadow-lg rounded-2xl overflow-hidden flex flex-col justify-between`}
+        shadow-lg rounded-2xl overflow-hidden flex flex-col justify-between ${backgroundColor}`} // Use background color prop
     >
-      <div className="title bg-[var(--g2)] tracking-tight text-white text-2xl font-medium py-4 px-6">
+      <div
+        className={`title tracking-tight bg-[var(--g2)] text-white text-2xl font-medium py-4 px-6 ${
+          pricingData.title === "Trippo Standard"
+            ? "text-blue-500"
+            : pricingData.title === "Trippo Gold"
+            ? "text-yellow-300"
+            : pricingData.title === "Trippo Diamond"
+            ? "text-[#47c8e8]"
+            : "text-white" // Fallback color
+        }`}
+      >
         {pricingData.title}
       </div>
       <div className="card p-6">
@@ -121,13 +129,10 @@ const PricingCard = ({
           </span>
           <span className="text-4xl">{dollar}</span>
         </h2>
-        {/* <p className="price-desc text-sm text-gray-500 mb-2">
-          {generic.priceDesc}
-        </p> */}
         <p className="price-overview text-lg font-semibold">
           {pricingData.priceOverview}
         </p>
-        <hr className="border-[var(--g)]  my-3"></hr>
+        <hr className="border-[var(--g)]  my-3" />
         <div className="features mt-4 text-gray-600">
           <h4 className="text-lg font-bold">Features</h4>
           <ul>
@@ -149,7 +154,7 @@ const PricingCard = ({
         </div>
       </div>
       <a
-        className="bttn bg-[var(--lg)] rounded-full text-[var(--llg)] text-center font-bold hover:bg-[var(--b)] hover:text-white transition-all duration-300 py-2 px-4 m-6 rounded"
+        className="bttn bg-[var(--lg)] rounded-full text-[var(--llg)] text-center font-medium hover:bg-[var(--b)] hover:text-white transition-all duration-300 py-2 px-4 m-6 rounded"
         href={generic.ctaLinkPrefix + pricingData.billingCode}
       >
         {generic.ctaText}
@@ -167,7 +172,6 @@ const Pricing = () => {
     ? pricingDataAll.promo
     : pricingDataAll.regular;
   const generic = pricingDataAll.generic;
-  const common = pricingDataAll.common;
 
   return (
     <div className="bg-[var(--g)] outfit mesh-dark min-w-full p-8 md:p-16">
@@ -181,22 +185,18 @@ const Pricing = () => {
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-6">
         <PricingCard
           pricingData={pricingDataCurrent.one}
-          common={common.one}
           generic={generic}
-          background="mesh-dark"
+          backgroundColor="bg-blue-300" // Change color for Trippo Standard
         />
         <PricingCard
           pricingData={pricingDataCurrent.two}
-          common={common.two}
           generic={generic}
-          isFeatured
-          background="bg-yellow-300"
+          backgroundColor="bg-yellow-400" // Change color for Trippo Gold
         />
         <PricingCard
           pricingData={pricingDataCurrent.three}
-          common={common.three}
           generic={generic}
-          background="bg-gray-300"
+          backgroundColor="bg-green-300" // Change color for Trippo Diamond
         />
       </div>
     </div>

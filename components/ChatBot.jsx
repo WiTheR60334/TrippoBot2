@@ -110,7 +110,7 @@ export default function ChatBot() {
                 className={`mb-3 md:p-3 p-2 rounded-xl border-[0.5px] border-gray-300 md:max-w-[60%] max-w-[90%] relative group transition-transform duration-300 ease-in-out ${
                   msg.sender === "user"
                     ? "bg-white text-[var(--g)] self-end ml-auto animate-slideUp"
-                    : "bg-white text-[var(--b)] animate-slideDown"
+                    : "bg-white text-[var(--lg)] animate-slideDown"
                 }`}
               >
                 <ReactMarkdown>{msg.text}</ReactMarkdown>
