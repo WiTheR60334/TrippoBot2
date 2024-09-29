@@ -58,7 +58,7 @@ export default function HomePage() {
               </h3>
               <div className="my-2 flex justify-center">
                 <img
-                  src="https://via.placeholder.com/200x150?text=Destination"
+                  src="https://private-user-images.githubusercontent.com/115364885/371841678-30d75a2d-5ad2-43ce-b75a-8139e76dfbb0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc2MDIwOTMsIm5iZiI6MTcyNzYwMTc5MywicGF0aCI6Ii8xMTUzNjQ4ODUvMzcxODQxNjc4LTMwZDc1YTJkLTVhZDItNDNjZS1iNzVhLTgxMzllNzZkZmJiMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkyOVQwOTIzMTNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jOGRmMTFiODc0OWZmYjExYWE4Njc2MTEyZDBlYmFhZGQ3MzJmNTJmYTJkOTliZDA0NjQ3ZGRjOWMyZjM5MmUxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.kDrI04MzK8rAvUsBlAmTqALzhf05OpocB9oNaTnM9Eo"
                   alt="Destination"
                   className="w-full h-auto rounded-md"
                 />
@@ -76,7 +76,7 @@ export default function HomePage() {
               </h3>
               <div className="flex my-2 justify-center">
                 <img
-                  src="https://via.placeholder.com/200x150?text=Itinerary"
+                  src="https://private-user-images.githubusercontent.com/115364885/371841669-cf007ef1-34fd-4d52-a653-ef2bba50529b.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc2MDIwOTMsIm5iZiI6MTcyNzYwMTc5MywicGF0aCI6Ii8xMTUzNjQ4ODUvMzcxODQxNjY5LWNmMDA3ZWYxLTM0ZmQtNGQ1Mi1hNjUzLWVmMmJiYTUwNTI5Yi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkyOVQwOTIzMTNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iYzQ5ZjVlNjNlNTZlOWY0MDg5NTc4MWNmZTcxZTNmMWVlMjEwZjc3ZjBkMTBmYjFlZDMzYWQ1YTRjN2Q3NzBjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.LZit8yS1xvjgmtJ_ELL8tjJ3j5K41a2TYRsRc-he0-Y"
                   alt="Itinerary"
                   className="w-full h-auto rounded-md"
                 />
@@ -94,7 +94,7 @@ export default function HomePage() {
               </h3>
               <div className="flex my-2 justify-center">
                 <img
-                  src="https://via.placeholder.com/200x150?text=Booking"
+                  src="https://private-user-images.githubusercontent.com/115364885/371841666-6dce4309-5b9e-4c94-ae8c-bf113398fb4c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc2MDIwOTMsIm5iZiI6MTcyNzYwMTc5MywicGF0aCI6Ii8xMTUzNjQ4ODUvMzcxODQxNjY2LTZkY2U0MzA5LTViOWUtNGM5NC1hZThjLWJmMTEzMzk4ZmI0Yy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkyOVQwOTIzMTNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iNzQzODY0NzQyZGRhYmE1MmMxNjYwZDUwMWRjOTZhMjNhZDRiNTdmOWY4ZDZkNjYwMzJiNDk3OWM4Y2RkNDg5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.OYBOt5INBR8KGX4FP6RTns81hm1965S9IUtzslNkYMY"
                   alt="Booking"
                   className="w-full h-auto rounded-md"
                 />
