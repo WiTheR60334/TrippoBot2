@@ -16,7 +16,9 @@ export default function Home() {
       {/* <HomePage /> */}
       <WelcomeTips />
       {/* <Profile /> */}
+      <div id="pricing">
       <Pricing />
+      </div>
       <div style={{marginTop: "5rem"}}>
       <Feedback />
       </div>
