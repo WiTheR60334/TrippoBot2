@@ -24,7 +24,7 @@ export default function ChatBotGold() {
   };
 
   return (
-    <div className="items-center outfit mesh-gold bg-white min-h-screen flex flex-col justify-center">
+    <div className="items-center outfit mesh-gold bg-white mt-10 min-h-screen flex flex-col justify-center">
       {/* Title Section */}
       <div className="flex flex-col justify-center items-center mb-5">
         <h5 className="text-xl md:text-3xl text-center tracking-tight text-[var(--g)] font-medium">

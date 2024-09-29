@@ -6,6 +6,10 @@ export default function Navbar() {
     window.location.href = "/home";
   };
 
+  const handleChat = () => {
+    window.location.href = "/chat";
+  };
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -13,17 +17,17 @@ export default function Navbar() {
   };
 
   return (
-    <div className="bg-white px-6 pt-6 flex justify-between outfit items-center">
-      <div className="text-3xl font-black">
+    <div className="bg-white fixed z-50 w-full top-0 p-4 mb-4 border-b-2 border-b-[var(--b)] flex justify-between outfit items-center">
+      <div className="text-3xl font-bold">
         <h1
-          className="bg-clip-text tracking-tight cursor-pointer text-transparent bg-gradient-to-r from-[var(--b)] to-[var(--lb)] reflect-gradient"
+          className="tracking-tight cursor-pointer text-[var(--b)]"
           style={{
             WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
+            // WebkitTextFillColor: "transparent",
           }}
           onClick={handleHome}
         >
-          Trippo.ai
+          Trippo<a className="font-medium text-[var(--gr)]">.ai</a>
         </h1>
       </div>
       <div className="flex items-center md:hidden">
@@ -50,20 +54,23 @@ export default function Navbar() {
         }`}
       >
         <ul className="flex flex-col md:flex-row p-0 md:p-0">
-          <li className="px-6 py-2 border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300 rounded-l-full">
-            Flights
+          <li
+            className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300 rounded-l-full"
+            onClick={handleChat}
+          >
+            Chat
           </li>
-          <li className="px-6 py-2 border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300">
-            Hotels
+          <li className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300">
+            Subscribe
           </li>
-          <li className="px-6 py-2 border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300">
+          <li className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300">
             Activities
           </li>
-          <li className="px-6 py-2 border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300">
+          <li className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300">
             Rentals
           </li>
-          <li className="px-6 py-2 border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300 rounded-r-full">
-            Profile
+          <li className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300 rounded-r-full">
+            Log in
           </li>
         </ul>
       </div>

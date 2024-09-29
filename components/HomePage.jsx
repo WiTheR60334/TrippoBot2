@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <>
       <div className="bg-white outfit py-8">
-        <div className="p-8 md:p-16 col-span-3 rounded-3xl flex flex-col md:flex-row items-center relative">
+        <div className="p-8 mesh-home md:p-16 col-span-3 flex flex-col md:flex-row items-center relative">
           <div className="md:justify-left">
             <h5 className="text-2xl md:text-3xl tracking-tight text-[var(--g)] font-medium">
               Discover Trippo
@@ -25,6 +25,7 @@ export default function HomePage() {
               at its core. Experience bespoke itineraries crafted to your
               preferences, powered by advanced semantic search.
             </h4>
+            {/* <TypeWritter /> */}
             <button
               className="group duration-300 relative inline-flex items-center px-4 py-2 md:mt-4 md:my-0 my-6 md:w-auto w-full text-white font-semibold rounded-full bg-[var(--gr)] border-none hover:border-[1px] hover:border-[var(--gr)] hover:bg-[var(--lg)] hover:text-[var(--gr)]"
               onClick={startChat}
@@ -42,7 +43,7 @@ export default function HomePage() {
             />
           </div>
         </div>
-        <div className="bg-[var(--g)] min-w-full p-8 md:p-16">
+        <div className="bg-[var(--g)] mesh-dark min-w-full p-8 md:p-16">
           <h5 className="text-2xl md:text-3xl tracking-tight text-[var(--lb)] font-medium">
             Try very useful
           </h5>

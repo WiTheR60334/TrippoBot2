@@ -27,7 +27,7 @@ export default function ChatBot() {
   };
 
   return (
-    <div className="items-center outfit mesh bg-white min-h-screen flex flex-col justify-center">
+    <div className="items-center outfit mesh bg-white min-h-screen mt-10 flex flex-col justify-center">
       {/* Title Section */}
       <div className="flex flex-col justify-center items-center mb-5">
         <h5 className="text-xl md:text-3xl text-center tracking-tight text-[var(--g)] font-medium">
@@ -109,7 +109,7 @@ export default function ChatBot() {
           </button>
         </div>
       </div>
-      <h5 className="text-md md:text-2xl text-center p-4 tracking-tight text-[var(--g)] font-medium">
+      <h5 className="text-md md:text-xl text-center px-4 py-2 mt-4 bg-white rounded-full tracking-tight text-[var(--g)] font-medium">
         Want better results? Try Our new{" "}
         <a
           className="text-[var(--b)] hover:text-[var(--gr)] cursor-pointer rounded-xl bg-none"

@@ -1,6 +1,7 @@
 "use client"; // Ensure the component is client-side
 import { useState, useEffect } from "react";
 import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
+import HomePage from "./HomePage";
 // import { useRouter } from "next/router"; // Uncomment this if you're using useRouter
 
 const steps = [
@@ -53,7 +54,7 @@ export default function WelcomeTips() {
 
   return (
     <>
-      <div className="bg-white max-h-screen outfit">
+      <div className="bg-white max-h-screen pt-16 outfit">
         <div className="h-screen">
           <div
             className="relative h-[89%] rounded-3xl m-6 overflow-hidden bg-cover transition-all duration-700 ease-in-out"
@@ -99,6 +100,7 @@ export default function WelcomeTips() {
           </div>
         </div>
       </div>
+      <HomePage />
     </>
   );
 }

@@ -31,6 +31,26 @@
     radial-gradient(at 59% 94%, hsla(153, 87%, 41%, 0.302) 0px, transparent 50%);
 }
 
+.mesh-home {
+  background-color: hsla(34, 0%, 100%, 1);
+  background-image: radial-gradient(
+      at 100% 99%,
+      rgba(27, 125, 238, 0.361) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 62% 100%, rgba(14, 196, 114, 0.235) 0px, transparent 50%);
+}
+
+.mesh-dark {
+  background-color: hsla(215, 14%, 16%, 1);
+  background-image: radial-gradient(
+      at 72% 61%,
+      hsla(213, 12%, 27%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 51% 98%, hsla(212, 5%, 46%, 1) 0px, transparent 50%);
+}
+
 /* .mesh-light {
   background-color: hsla(0, 0%, 100%, 1);
   background-image: radial-gradient(
