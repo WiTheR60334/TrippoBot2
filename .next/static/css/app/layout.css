@@ -12,16 +12,16 @@ font-weight: 100 900;
 }
 
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"app/layout.js","import":"","arguments":[{"src":"./fonts/GeistMonoVF.woff","variable":"--font-geist-mono","weight":"100 900"}],"variableName":"geistMono"} ***!
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[3].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[3].use[2]!./node_modules/next/font/local/target.css?{"path":"app/layout.js","import":"","arguments":[{"src":"./fonts/Outfit-VariableFont_wght.ttf","variable":"--outfit","weight":"100 900"}],"variableName":"outfit"} ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 @font-face {
-font-family: '__geistMono_c3aa02';
-src: url(/_next/static/media/463dafcda517f24f-s.p.woff) format('woff');
+font-family: '__outfit_9a426e';
+src: url(/_next/static/media/a007c2d81cb34e8c-s.p.ttf) format('truetype');
 font-display: swap;
 font-weight: 100 900;
-}@font-face {font-family: '__geistMono_Fallback_c3aa02';src: local("Arial");ascent-override: 69.97%;descent-override: 16.73%;line-gap-override: 7.61%;size-adjust: 131.49%
-}.__className_c3aa02 {font-family: '__geistMono_c3aa02', '__geistMono_Fallback_c3aa02'
-}.__variable_c3aa02 {--font-geist-mono: '__geistMono_c3aa02', '__geistMono_Fallback_c3aa02'
+}@font-face {font-family: '__outfit_Fallback_9a426e';src: local("Arial");ascent-override: 100.84%;descent-override: 26.22%;line-gap-override: 0.00%;size-adjust: 99.17%
+}.__className_9a426e {font-family: '__outfit_9a426e', '__outfit_Fallback_9a426e'
+}.__variable_9a426e {--outfit: '__outfit_9a426e', '__outfit_Fallback_9a426e'
 }
 
 /*!*************************************************************************************************************************************************************************************************************************************************************!*\
@@ -952,9 +952,6 @@ select {
 .flex-col {
   flex-direction: column;
 }
-.content-center {
-  align-content: center;
-}
 .items-center {
   align-items: center;
 }
@@ -1146,6 +1143,11 @@ select {
 .bg-none {
   background-image: none;
 }
+.from-\[hsla\(47\2c 100\%\2c 77\%\2c 1\)\] {
+  --tw-gradient-from: hsla(47,100%,77%,1) var(--tw-gradient-from-position);
+  --tw-gradient-to: hsla(47, 100%, 77%, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
 .from-\[var\(--b\)\] {
   --tw-gradient-from: var(--b) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
@@ -1173,6 +1175,9 @@ select {
 .via-\[var\(--llg\)\] {
   --tw-gradient-to: rgb(255 255 255 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--llg) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+.to-\[\#e0aa3e\] {
+  --tw-gradient-to: #e0aa3e var(--tw-gradient-to-position);
 }
 .to-\[var\(--lb\)\] {
   --tw-gradient-to: var(--lb) var(--tw-gradient-to-position);
@@ -1321,6 +1326,10 @@ select {
 .tracking-tighter {
   letter-spacing: -0.05em;
 }
+.text-\[\#e0aa3e\] {
+  --tw-text-opacity: 1;
+  color: rgb(224 170 62 / var(--tw-text-opacity));
+}
 .text-\[var\(--b\)\] {
   color: var(--b);
 }
@@ -1451,7 +1460,7 @@ select {
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"); */
 
 :root {
   --background: #ffffff;
@@ -1491,10 +1500,21 @@ select {
     radial-gradient(at 39% 0%, hsla(153, 87%, 41%, 0.19) 0px, transparent 50%);
 } */
 
+.mesh-gold {
+  background-color: hsla(34, 0%, 100%, 1);
+  background-image: radial-gradient(
+      at 69% 100%,
+      rgba(255, 226, 123, 0.822) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 39% 99%, rgba(231, 169, 75, 0.748) 0px, transparent 50%);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: white;
     --foreground: #0a0a0a;
+    --gold: rgb(201, 174, 76);
   }
 }
 
@@ -1549,11 +1569,6 @@ body {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-\[\#a67c00\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(166 124 0 / var(--tw-bg-opacity));
-}
-
 .hover\:text-\[var\(--b\)\]:hover {
   color: var(--b);
 }
@@ -1570,24 +1585,6 @@ body {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.hover\:text-\[\#ffbf0\]:hover {
-  color: #ffbf0;
-}
-
-.hover\:text-\[\#ffbf00\]:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 191 0 / var(--tw-text-opacity));
-}
-
-.hover\:text-\[\#ffcf40\]:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 207 64 / var(--tw-text-opacity));
-}
-
-.hover\:text-\[var\(--g\)\]:hover {
-  color: var(--g);
 }
 
 .focus\:outline-none:focus {
@@ -1661,10 +1658,6 @@ body {
 
   .md\:hidden {
     display: none;
-  }
-
-  .md\:h-\[700px\] {
-    height: 700px;
   }
 
   .md\:h-\[600px\] {
@@ -1743,6 +1736,11 @@ body {
     text-align: left;
   }
 
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -1761,11 +1759,6 @@ body {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .md\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 
   .md\:leading-6 {

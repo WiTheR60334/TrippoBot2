@@ -2,6 +2,10 @@
 import { useState } from "react";
 
 export default function Navbar() {
+  const handleHome = () => {
+    window.location.href = "/home";
+  };
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -12,11 +16,12 @@ export default function Navbar() {
     <div className="bg-white px-6 pt-6 flex justify-between outfit items-center">
       <div className="text-3xl font-black">
         <h1
-          className="bg-clip-text tracking-tight text-transparent bg-gradient-to-r from-[var(--b)] to-[var(--lb)] reflect-gradient"
+          className="bg-clip-text tracking-tight cursor-pointer text-transparent bg-gradient-to-r from-[var(--b)] to-[var(--lb)] reflect-gradient"
           style={{
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
+          onClick={handleHome}
         >
           Trippo.ai
         </h1>

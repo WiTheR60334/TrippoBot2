@@ -24,14 +24,14 @@ export default function ChatBotGold() {
   };
 
   return (
-    <div className="items-center outfit mesh bg-white min-h-screen flex flex-col justify-center">
+    <div className="items-center outfit mesh-gold bg-white min-h-screen flex flex-col justify-center">
       {/* Title Section */}
       <div className="flex flex-col justify-center items-center mb-5">
         <h5 className="text-xl md:text-3xl text-center tracking-tight text-[var(--g)] font-medium">
-          Trippo
+          Trippo Gold
         </h5>
-        <h3 className="text-2xl md:text-4xl text-center bg-gradient-to-r from-[var(--lb)] via-[var(--b)] to-[var(--lb)] bg-clip-text text-transparent mb-5 mx-5 font-semibold tracking-tighter">
-          Your Personal AI-Assisted Travel Advisor
+        <h3 className="text-2xl md:text-4xl text-center bg-gradient-to-r from-[hsla(47,100%,77%,1)] via-[#e0aa3e)] to-[#e0aa3e] bg-clip-text text-transparent mb-5 mx-5 font-semibold tracking-tighter">
+          Advanced AI-Assisted Travel Advisor
         </h3>
       </div>
 
@@ -65,7 +65,7 @@ export default function ChatBotGold() {
                 className={`mb-3 md:p-3 p-2 rounded-xl border-[0.5px] border-gray-300 md:max-w-[60%] max-w-[90%] relative group transition-transform duration-300 ease-in-out ${
                   msg.sender === "user"
                     ? "bg-white text-[var(--g)] self-end ml-auto animate-slideUp"
-                    : "bg-white text-[var(--b)] animate-slideDown"
+                    : "bg-white text-[#e0aa3e] animate-slideDown"
                 }`}
               >
                 {msg.text}
@@ -106,12 +106,12 @@ export default function ChatBotGold() {
           </button>
         </div>
       </div>
-      <h5 className="text-md md:text-2xl text-center p-4 tracking-tight text-[var(--g)] font-medium">
+      {/* <h5 className="text-md md:text-2xl text-center p-4 tracking-tight text-[var(--g)] font-medium">
         Want better results? Try Our new{" "}
         <a className="text-[var(--b)] hover:text-[var(--gr)] cursor-pointer rounded-xl bg-none">
           Trippo GOLD
         </a>
-      </h5>
+      </h5> */}
     </div>
   );
 }
