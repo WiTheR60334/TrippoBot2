@@ -61,7 +61,7 @@ export default function Navbar() {
             Chat
           </li>
           <li className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300">
-            Subscribe
+            Pricing
           </li>
           <li className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300">
             Activities

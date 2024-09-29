@@ -4,6 +4,7 @@ import ChatBot from "@/components/ChatBot";
 import Navbar from "@/components/Navbar";
 import WelcomeTips from "@/components/WelcomeTips";
 import Profile from "@/components/Profile";
+import Pricing from "@/components/Pricing";
 import Footer from "@/components/footer";
 import Image from "next/image";
 
@@ -12,7 +13,8 @@ export default function Home() {
     <>
       {/* <HomePage /> */}
       <WelcomeTips />
-      <Profile />
+      {/* <Profile /> */}
+      <Pricing />
       <Footer />
     </>
   );

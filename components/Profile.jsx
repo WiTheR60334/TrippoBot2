@@ -11,7 +11,7 @@ import {
   endOfWeek,
   isSameDay,
   addDays,
-  isAfter
+  isAfter,
 } from "date-fns";
 
 const App = () => {
@@ -64,8 +64,12 @@ const App = () => {
 
       days.push(
         <div
-          className={`relative border p-4 h-20 w-full rounded-lg transition-transform duration-300  ${isSameDay(day, today) ? "bg-white text-black" : "bg-white"} ${
-            destinations[formattedDate] ? "bg-[var(--lgg)] border-[var(--gr)] text-white" : ""
+          className={`relative border p-4 h-20 w-full rounded-lg transition-transform duration-300  ${
+            isSameDay(day, today) ? "bg-white text-black" : "bg-white"
+          } ${
+            destinations[formattedDate]
+              ? "bg-[var(--lgg)] border-[var(--gr)] text-white"
+              : ""
           }`}
           key={day}
         >
@@ -90,17 +94,30 @@ const App = () => {
   }
 
   // Filter upcoming trips
-  const upcomingTrips = Object.keys(destinations).filter((date) => isAfter(new Date(date), today));
+  const upcomingTrips = Object.keys(destinations).filter((date) =>
+    isAfter(new Date(date), today)
+  );
 
   return (
-    <div className="min-h-screen p-6 flex bg-gradient-to-r from-gray-100 to-gray-50">
-      {/* Left side - User details and summary */}
+    <div className="bg-[var(--g)] mesh-dark min-w-full p-8 md:p-16">
+      <h5 className="text-2xl md:text-3xl tracking-tight text-[var(--lb)] font-medium">
+        Want to chat more and more?
+      </h5>
+      <h3 className="text-5xl md:text-7xl bg-gradient-to-r from-[var(--lg)] via-[var(--llg)] to-[var(--lg)] w-[90%] md:w-[40%] bg-clip-text text-transparent mb-10 font-semibold tracking-tighter">
+        Explore our plans
+      </h3>
       <div className="w-1/3 p-6 bg-[var(--lgg1)] rounded-3xl">
-        <h2 className="text-3xl font-bold mb-4 text-[var(--bl)]">Welcome, Anna!</h2>
+        <h2 className="text-3xl font-bold mb-4 text-[var(--bl)]">
+          Welcome, Anna!
+        </h2>
         <p className="mb-4 text-[var(--lbl)]">Today you are in Japan.</p>
         <div className="mb-4">
-          <h3 className="font-semibold text-[var(--lbl)]">Email: anna@example.com</h3>
-          <h3 className="font-semibold text-[var(--lbl)]">Phone: +123 456 7890</h3>
+          <h3 className="font-semibold text-[var(--lbl)]">
+            Email: anna@example.com
+          </h3>
+          <h3 className="font-semibold text-[var(--lbl)]">
+            Phone: +123 456 7890
+          </h3>
         </div>
 
         {/* Destination, Country, and Continent Circular Graphics */}
@@ -193,19 +210,28 @@ const App = () => {
 
         {/* Upcoming Trips Section as a Table */}
         <div className="mt-6">
-          <h3 className="text-black font-semibold mb-2 text-[var(--bl)]">Upcoming Trips</h3>
+          <h3 className="text-black font-semibold mb-2 text-[var(--bl)]">
+            Upcoming Trips
+          </h3>
           <table className="table-auto w-full text-left">
             <thead>
               <tr className="border-b">
                 <th className="px-2 py-2 font-medium text-[var(--bl)]">Date</th>
-                <th className="px-8 py-2 font-medium text-[var(--bl)]">Destination</th>
+                <th className="px-8 py-2 font-medium text-[var(--bl)]">
+                  Destination
+                </th>
               </tr>
             </thead>
             <tbody>
               {upcomingTrips.map((date) => (
-                <tr key={date} className="hover:bg-gray-100 transition-colors duration-200">
+                <tr
+                  key={date}
+                  className="hover:bg-gray-100 transition-colors duration-200"
+                >
                   <td className="px-2 py-1 text-[var(--lbl)]">{date}</td>
-                  <td className="px-8 py-1 text-[var(--lbl)]">{destinations[date]}</td>
+                  <td className="px-8 py-1 text-[var(--lbl)]">
+                    {destinations[date]}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -223,7 +249,9 @@ const App = () => {
           >
             Previous
           </button>
-          <h2 className="text-2xl text-gray-950 font-bold">{format(currentDate, "MMMM yyyy")}</h2>
+          <h2 className="text-2xl text-gray-950 font-bold">
+            {format(currentDate, "MMMM yyyy")}
+          </h2>
           <button
             onClick={() => setCurrentDate(addMonths(currentDate, 1))}
             className="px-4 py-2 bg-[var(--gr)] text-white rounded-lg shadow-md hover:bg-[var(--gr)] transition duration-200"
@@ -233,7 +261,12 @@ const App = () => {
         </div>
         <div className="grid grid-cols-7 gap-2">
           {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-            <div key={day} className="text-center font-semibold text-[var(--lbl)]">{day}</div>
+            <div
+              key={day}
+              className="text-center font-semibold text-[var(--lbl)]"
+            >
+              {day}
+            </div>
           ))}
         </div>
         {rows}
