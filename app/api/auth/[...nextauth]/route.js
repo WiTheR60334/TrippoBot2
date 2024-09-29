@@ -1,45 +1,90 @@
 import NextAuth from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials"; // Import Credentials Provider
-import User from "../../../../models/User"; // Your User model
-import connectDB from "../../../../util/DB"; // Your database connection utility
-import bcrypt from "bcrypt"; // For password hashing
+import GoogleProvider from "next-auth/providers/google";
+import CredentialsProvider from "next-auth/providers/credentials";
+import User from "@/models/User";
+import connectDB from "@/util/DB";
+import bcrypt from "bcryptjs";
 
-const authOptions = {
+export const authOptions = {
   providers: [
+    // Google Provider for OAuth
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      profile(profile) {
+        return {
+          id: profile.sub,
+          email: profile.email,
+        };
+      },
+    }),
+    // Email/Password Credentials Provider for Login
     CredentialsProvider({
-      name: "Credentials",
+      name: "Email and Password",
       credentials: {
-        email: {
-          label: "Email",
-          type: "text",
-          placeholder: "your-email@example.com",
-        },
+        email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        await connectDB(); // Connect to the database
+        const { email, password } = credentials;
 
-        const user = await User.findOne({ email: credentials.email });
+        await connectDB();
+        const user = await User.findOne({ email });
 
-        // Check if user exists and password matches
-        if (
-          user &&
-          (await bcrypt.compare(credentials.password, user.password))
-        ) {
-          return { id: user._id, email: user.email, role: user.role }; // Return user object
-        } else {
-          throw new Error("Invalid email or password");
+        if (!user) {
+          throw new Error("No user found with this email");
         }
+
+        const isValidPassword = await bcrypt.compare(password, user.password);
+        if (!isValidPassword) {
+          throw new Error("Invalid credentials");
+        }
+
+        return {
+          id: user._id,
+          email: user.email,
+        };
       },
     }),
   ],
   callbacks: {
+    async signIn({ user, account }) {
+      if (account.provider === "google") {
+        const { email } = user;
+        try {
+          await connectDB();
+          const userExists = await User.findOne({ email });
+
+          if (!userExists) {
+            // Register new user if they don't already exist
+            const newUser = new User({ email });
+            await newUser.save();
+          }
+        } catch (error) {
+          console.log(error);
+          return false;
+        }
+      }
+      return true;
+    },
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
+    },
     async session({ session, token }) {
-      const user = await User.findById(token.id);
-      session.user.role = user.role; // Attach user role to session
+      if (token) {
+        session.user.id = token.id;
+      }
       return session;
     },
   },
+  // pages: {
+  //   signIn: "/auth/signin", // Custom sign-in page
+  //   newUser: "/auth/register", // Custom sign-up page
+  // },
+  secret: process.env.AUTH_SECRET,
 };
 
 const handler = NextAuth(authOptions);

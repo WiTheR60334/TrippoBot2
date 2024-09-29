@@ -1,6 +1,4 @@
 {
-  "/page": "app/page.js",
-  "/home/page": "app/home/page.js",
-  "/chat/page": "app/chat/page.js",
-  "/chat-gold/page": "app/chat-gold/page.js"
+  "/chat-gold/page": "app/chat-gold/page.js",
+  "/chat/page": "app/chat/page.js"
 }

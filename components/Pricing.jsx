@@ -109,7 +109,7 @@ const PricingCard = ({
   return (
     <div
       className={`pricingCard mesh-price transition-transform transform hover:scale-105 duration-300 ease-in-out 
-        shadow-lg rounded-lg overflow-hidden flex flex-col justify-between`}
+        shadow-lg rounded-2xl overflow-hidden flex flex-col justify-between`}
     >
       <div className="title bg-[var(--g2)] tracking-tight text-white text-2xl font-medium py-4 px-6">
         {pricingData.title}
@@ -149,7 +149,7 @@ const PricingCard = ({
         </div>
       </div>
       <a
-        className="bttn bg-transparent text-blue-500 font-bold border border-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 py-2 px-4 m-6 rounded"
+        className="bttn bg-[var(--lg)] rounded-full text-[var(--llg)] text-center font-bold hover:bg-[var(--b)] hover:text-white transition-all duration-300 py-2 px-4 m-6 rounded"
         href={generic.ctaLinkPrefix + pricingData.billingCode}
       >
         {generic.ctaText}

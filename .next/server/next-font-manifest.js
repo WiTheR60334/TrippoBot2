@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/meetyashvantbhaisuthar/Development Projects and Tools/Projects/TrippoBot/app/layout\":[\"static/media/4473ecc91f70f139-s.p.woff\",\"static/media/a007c2d81cb34e8c-s.p.ttf\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{},\"appUsingSizeAdjust\":false,\"pagesUsingSizeAdjust\":false}"

@@ -1,32 +1,31 @@
-const mongoose = require("mongoose");
-require("dotenv").config();
+import mongoose from 'mongoose';
 
-exports.connect = () => {
-  const uri = process.env.MONGODB_URI; // Retrieve the MongoDB URI from environment variables
+let isConnected = false; // Track the connection status
 
-  // Check if the URI is defined
-  if (!uri) {
-    console.error(
-      "MongoDB connection URI is undefined. Please check your .env file."
-    );
-    process.exit(1); // Exit the process if the URI is not set
+const connectDB = async () => {
+  if (isConnected) {
+    console.log('Using existing MongoDB connection...');
+    return;
   }
 
-  // Optional: Log the URI for debugging (make sure not to log sensitive information in production)
-  console.log("MongoDB URI:", uri);
+  try {
+    if (mongoose.connection.readyState === 1) {
+      isConnected = true;
+      console.log('Already connected to MongoDB.');
+      return;
+    }
 
-  mongoose
-    .connect(uri, {
-      // Use the URI directly
+    await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-    })
-    .then(() => {
-      console.log("DB connected successfully");
-    })
-    .catch((error) => {
-      console.log("DB connection failed");
-      console.error("Error is: ", error.message); // Log only the error message for clarity
-      process.exit(1);
     });
+
+    isConnected = true;
+    console.log('MongoDB connected successfully.');
+  } catch (error) {
+    console.error('MongoDB connection error:', error);
+    throw error; // Throwing the error instead of calling `process.exit(1)` in serverless environments
+  }
 };
+
+export default connectDB;

@@ -1,4 +1,4 @@
-// File: /Users/meetyashvantbhaisuthar/Development Projects and Tools/Projects/TrippoBot/app/chat/page.jsx
+// File: C:\Users\Romir\Downloads\TrippoBot\TrippoBot\app\chat\page.jsx
 import * as entry from '../../../../app/chat/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
