@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --gr: hsl(153, 87%, 41%);
+  --b: #1d7dee;
+  --lb: #79b0f5;
+  --g: #242930;
+  --g2: #3e4650;
+  --lg: #71777e;
+  --llg: #ecf2fa;
+}
+
+.outfit {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.mesh {
+  background-color: hsla(0, 0%, 100%, 1);
+  background-image: radial-gradient(
+      at 29% 100%,
+      hsla(213, 85%, 71%, 0.311) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 59% 94%, hsla(153, 87%, 41%, 0.302) 0px, transparent 50%);
+}
+
+/* .mesh-light {
+  background-color: hsla(0, 0%, 100%, 1);
+  background-image: radial-gradient(
+      at 59% 31%,
+      hsla(213, 85%, 71%, 0.29) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 39% 0%, hsla(153, 87%, 41%, 0.19) 0px, transparent 50%);
+} */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: white;
+    --foreground: #0a0a0a;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
