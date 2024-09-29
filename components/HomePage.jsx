@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import TypingEffect from "@/components/TypingEffect";
 
 export default function HomePage() {
   const startChat = () => {
@@ -21,17 +22,20 @@ export default function HomePage() {
             </h3>
             <hr className="my-2" />
             <h4 className="mt-4 text-lg md:text-xl text-gray-600 md:leading-6 leading-5 md:max-w-[70%]">
-              Vacay redefines travel planning with precision and personalization
-              at its core. Experience bespoke itineraries crafted to your
-              preferences, powered by advanced semantic search.
+              Trippo.ai redefines travel planning with precision and
+              personalization at its core. Experience bespoke itineraries
+              crafted to your preferences, powered by advanced semantic search.
             </h4>
             {/* <TypeWritter /> */}
-            <button
-              className="group duration-300 relative inline-flex items-center px-4 py-2 md:mt-4 md:my-0 my-6 md:w-auto w-full text-white font-semibold rounded-full bg-[var(--gr)] border-none hover:border-[1px] hover:border-[var(--gr)] hover:bg-[var(--lg)] hover:text-[var(--gr)]"
-              onClick={startChat}
-            >
-              Try it
-            </button>
+            <div className="flex items-center my-5">
+              <TypingEffect />
+              <button
+                className="group mr-3 duration-300 ml-4 h-[40px] relative inline-flex items-center px-4 py-2 md:my-0 md:w-auto w-full text-white font-semibold rounded-xl bg-[var(--gr)] border-none hover:border-[1px] hover:border-[var(--gr)] hover:bg-[var(--lg)] hover:text-[var(--gr)]"
+                onClick={startChat}
+              >
+                Try it
+              </button>
+            </div>
           </div>
           <div className="md:ml-6">
             <Image
@@ -58,7 +62,7 @@ export default function HomePage() {
               </h3>
               <div className="my-2 flex justify-center">
                 <img
-                  src="https://private-user-images.githubusercontent.com/115364885/371841678-30d75a2d-5ad2-43ce-b75a-8139e76dfbb0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc2MDI3ODQsIm5iZiI6MTcyNzYwMjQ4NCwicGF0aCI6Ii8xMTUzNjQ4ODUvMzcxODQxNjc4LTMwZDc1YTJkLTVhZDItNDNjZS1iNzVhLTgxMzllNzZkZmJiMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkyOVQwOTM0NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mMmNiOTY5MDZjNjc4ZGY0Y2U5YWE0NDM5NDM3MDUyYjY0NDNkNzgxZWUyMDM1N2NjNGJlOWU5NDQyYTFmMTQ4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.hPFBn9oUPUwgwWhHjnLC6MSdn7xxq8ssgPQKDZto0eo"
+                  src="https://via.placeholder.com/200x150?text=Destination"
                   alt="Destination"
                   className="w-full h-auto rounded-md"
                 />
@@ -76,7 +80,7 @@ export default function HomePage() {
               </h3>
               <div className="flex my-2 justify-center">
                 <img
-                  src="https://private-user-images.githubusercontent.com/115364885/371841669-cf007ef1-34fd-4d52-a653-ef2bba50529b.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc2MDI3ODQsIm5iZiI6MTcyNzYwMjQ4NCwicGF0aCI6Ii8xMTUzNjQ4ODUvMzcxODQxNjY5LWNmMDA3ZWYxLTM0ZmQtNGQ1Mi1hNjUzLWVmMmJiYTUwNTI5Yi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkyOVQwOTM0NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05MTFjYjU1YmE1ZmE0NzIwMTFkMGJlNDUxYmFhNDE1YzJhMzY0ZmZlYWE0MDgwNGJjYjU2MGYzNTcyZGEzMTRhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.G_4rY6m4vbg8tQThy78GQ-viivE7L_WLXmeIp0NeGW4"
+                  src="https://via.placeholder.com/200x150?text=Itinerary"
                   alt="Itinerary"
                   className="w-full h-auto rounded-md"
                 />
@@ -94,7 +98,7 @@ export default function HomePage() {
               </h3>
               <div className="flex my-2 justify-center">
                 <img
-                  src="https://private-user-images.githubusercontent.com/115364885/371841666-6dce4309-5b9e-4c94-ae8c-bf113398fb4c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc2MDI3ODQsIm5iZiI6MTcyNzYwMjQ4NCwicGF0aCI6Ii8xMTUzNjQ4ODUvMzcxODQxNjY2LTZkY2U0MzA5LTViOWUtNGM5NC1hZThjLWJmMTEzMzk4ZmI0Yy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkyOVQwOTM0NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zZTk0NjJkYTg3Mjc4YjE5MDk3NGVlYmEwZTk4MjVlYTE2N2FiOTBhOGM4MTcxNmRkNGZmMDQzN2FmOWM4NTI3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.VFZGJt4tncT1z5XY4mrQRtcwwCwUb_9nOahl5d7AvU4"
+                  src="https://via.placeholder.com/200x150?text=Booking"
                   alt="Booking"
                   className="w-full h-auto rounded-md"
                 />
