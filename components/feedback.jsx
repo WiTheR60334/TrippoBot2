@@ -49,7 +49,7 @@ const Feedback = () => {
                 {/* Right: Image */}
                 <div className="right w-[35%] h-[100%] hidden md:flex items-center justify-center bg-slate-100">
                     <img 
-                        src="/images/feedback.png" 
+                        src="https://private-user-images.githubusercontent.com/115364885/371841676-4a400740-aa02-4fe3-97c1-9b9ca02bc70a.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc2MDI3ODQsIm5iZiI6MTcyNzYwMjQ4NCwicGF0aCI6Ii8xMTUzNjQ4ODUvMzcxODQxNjc2LTRhNDAwNzQwLWFhMDItNGZlMy05N2MxLTliOWNhMDJiYzcwYS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkyOVQwOTM0NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05YzdiODViZDg0YjRhNWE5OTRjMzc3N2ViMzNiM2I5ZTk5YzE1MzQ4YWI4MzA2Yzc2YTFkNmE3Y2E1OGQ3OGQ2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.9ANToR16C3O3W0Q1E9TZsMQH5jMxrhVlvI_d5JrBEgs" 
                         alt="Feedback" 
                         className="w-full h-full object-cover" 
                     />

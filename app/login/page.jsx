@@ -1,9 +1,7 @@
 "use client";
-import { signIn, useSession, signOut} from "next-auth/react";
-import Image from "next/image";
+import { signIn, useSession } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
-import styles from "./page.module.css";
-import React, {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { SessionProvider } from "next-auth/react";
 
@@ -15,7 +13,7 @@ export default function Home() {
 
   const router = useRouter();
   const [error, setError] = useState("");
-  const {status} = useSession();
+  const { status } = useSession();
 
   useEffect(() => {
     if (status === "authenticated") {
@@ -43,7 +41,7 @@ export default function Home() {
     const res = await signIn("credentials", {
       redirect: false,
       email,
-      password
+      password,
     });
 
     if (res?.error) {
@@ -56,36 +54,63 @@ export default function Home() {
 
   return (
     <SessionProvider session={status}>
-    <div className={styles.main}>
-      <div className={styles.container}>
-      <div className={styles.title}>Welcome Back</div>
-      <div className={styles.titlePara}>Log in with AU credentials only</div>
-      <form onSubmit={handleSubmit}>
-      <div className={styles.username}>
-        <input type="text" placeholder="Email" required className={styles.userName}></input>
-      </div>
-      <div className={styles.username}>
-        <input type="password" placeholder="Password" required className={styles.password}></input>
-      </div>
-      <div className={styles.login}>
-        <button type="submit" className={styles.button}>Login</button>
-      </div>
-      <p className={styles.error}>{error && error}</p>
-      </form>
-      <div className={styles.or}>or</div>
-      <div className={styles.loginWithGoogle}>
-        <button
-          onClick={async () => {
-            await signIn("google");
-          }}
-          className={styles.google}
-        >
-          <FcGoogle style={{marginRight: '.5rem'}} />
-          Login with Google
-        </button>
+      <div className="flex flex-col outfit items-center mesh justify-center min-h-screen mx-4">
+        <div className="md:w-[50%] w-[90%] bg-white flex border-[1px] border-gray-300 flex-col p-8 rounded-3xl shadow-black/10 shadow-2xl">
+          <h3 className="md:text-6xl  text-2xl text-center md:text-left text-[var(--gr)] tracking-tight font-semibold mb-2">
+            Welcome to <a className="text-[var(--b)]">Trippo.ai</a>
+          </h3>
+          <p className="text-[var(--g)] text-center md:text-left text-md leading-5 md:text-3xl">
+            Log in with credentials
+          </p>
+          <hr className="my-7"></hr>
+          {/* <div className="flex justify-center">Log in with credentials</div> */}
+          <form onSubmit={handleSubmit}>
+            <div className="flex flex-col justify-center">
+              Email
+              <input
+                type="text"
+                placeholder="Email"
+                required
+                className="flex justify-center mt-2 mb-10 bg-[#F0EDFF] w-full rounded-lg h-9 pl-3"
+              />
+            </div>
+            <div className="flex flex-col justify-center">
+              Password
+              <input
+                type="password"
+                placeholder="Password"
+                required
+                className="flex justify-center mt-2 mb-2 bg-[#F0EDFF] w-full rounded-lg h-9 pl-3"
+              />
+            </div>
+            <div className="flex justify-center mt-4">
+              <button
+                type="submit"
+                className="rounded-lg bg-blue-600 text-white font-bold px-4 py-2 w-full hover:bg-blue-500"
+              >
+                Login
+              </button>
+            </div>
+            {error && (
+              <p className="flex justify-center text-red-500 font-bold">
+                {error}
+              </p>
+            )}
+          </form>
+          <div className="flex justify-center mt-4">or</div>
+          <div className="flex justify-center mt-4">
+            <button
+              onClick={async () => {
+                await signIn("google");
+              }}
+              className="flex justify-center items-center border border-[#F0EDFF] bg-white rounded-lg h-10 w-full hover:border-blue-600"
+            >
+              <FcGoogle className="mr-2" />
+              Login with Google
+            </button>
+          </div>
         </div>
-    </div>
-    </div>
+      </div>
     </SessionProvider>
   );
 }
