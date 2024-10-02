@@ -33,7 +33,7 @@ export default function HomePage() {
           </div>
           <div className="md:ml-6">
             <Image
-              src="/group.svg"
+              src="https://firebasestorage.googleapis.com/v0/b/trippo-a1603.appspot.com/o/Group.png?alt=media&token=1ce9a646-20a0-4313-a9c9-a79375bfee80"
               alt="Travel Reminders"
               width={500}
               height={500}
@@ -55,11 +55,12 @@ export default function HomePage() {
                 Destination Planner
               </h3>
               <div className="my-2 flex justify-center">
-                <img
-                  src="https://private-user-images.githubusercontent.com/115364885/371841678-30d75a2d-5ad2-43ce-b75a-8139e76dfbb0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc2MDI3ODQsIm5iZiI6MTcyNzYwMjQ4NCwicGF0aCI6Ii8xMTUzNjQ4ODUvMzcxODQxNjc4LTMwZDc1YTJkLTVhZDItNDNjZS1iNzVhLTgxMzllNzZkZmJiMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkyOVQwOTM0NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mMmNiOTY5MDZjNjc4ZGY0Y2U5YWE0NDM5NDM3MDUyYjY0NDNkNzgxZWUyMDM1N2NjNGJlOWU5NDQyYTFmMTQ4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.hPFBn9oUPUwgwWhHjnLC6MSdn7xxq8ssgPQKDZto0eo"
-                  alt="Destination"
-                  className="w-full h-auto rounded-md"
-                />
+              <img
+                src={`https://firebasestorage.googleapis.com/v0/b/${process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID}/o/Destination.png?alt=media&token=d748993f-707a-4efd-94ec-57ce06aa0357`}
+                alt="Destination"
+                className="w-full h-auto rounded-md"
+              />
+
               </div>
               <p className="text-[var(--llg)] text-md md:text-xl leading-6 p-2">
                 Get popular attractions, local culture, cuisine, and events
@@ -74,7 +75,7 @@ export default function HomePage() {
               </h3>
               <div className="flex my-2 justify-center">
                 <img
-                  src="https://private-user-images.githubusercontent.com/115364885/371841669-cf007ef1-34fd-4d52-a653-ef2bba50529b.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc2MDI3ODQsIm5iZiI6MTcyNzYwMjQ4NCwicGF0aCI6Ii8xMTUzNjQ4ODUvMzcxODQxNjY5LWNmMDA3ZWYxLTM0ZmQtNGQ1Mi1hNjUzLWVmMmJiYTUwNTI5Yi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkyOVQwOTM0NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05MTFjYjU1YmE1ZmE0NzIwMTFkMGJlNDUxYmFhNDE1YzJhMzY0ZmZlYWE0MDgwNGJjYjU2MGYzNTcyZGEzMTRhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.G_4rY6m4vbg8tQThy78GQ-viivE7L_WLXmeIp0NeGW4"
+                  src={`https://firebasestorage.googleapis.com/v0/b/${process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID}/o/Itenary.jpg?alt=media&token=6fd86271-1f62-401a-a86c-fc89a3926184`}
                   alt="Itinerary"
                   className="w-full h-auto rounded-md"
                 />
@@ -92,7 +93,7 @@ export default function HomePage() {
               </h3>
               <div className="flex my-2 justify-center">
                 <img
-                  src="https://private-user-images.githubusercontent.com/115364885/371841666-6dce4309-5b9e-4c94-ae8c-bf113398fb4c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjc2MDI3ODQsIm5iZiI6MTcyNzYwMjQ4NCwicGF0aCI6Ii8xMTUzNjQ4ODUvMzcxODQxNjY2LTZkY2U0MzA5LTViOWUtNGM5NC1hZThjLWJmMTEzMzk4ZmI0Yy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkyOVQwOTM0NDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zZTk0NjJkYTg3Mjc4YjE5MDk3NGVlYmEwZTk4MjVlYTE2N2FiOTBhOGM4MTcxNmRkNGZmMDQzN2FmOWM4NTI3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.VFZGJt4tncT1z5XY4mrQRtcwwCwUb_9nOahl5d7AvU4"
+                  src={`https://firebasestorage.googleapis.com/v0/b/${process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID}/o/Booking.png?alt=media&token=ca512010-a15e-4bcb-b5ff-313f1d9cea7e`}
                   alt="Booking"
                   className="w-full h-auto rounded-md"
                 />
@@ -125,7 +126,7 @@ export default function HomePage() {
             <div className="bg-gray-100 p-6 md:p-8 rounded-xl flex-row md:flex items-center">
               <div className="flex justify-center md:mr-4 md:m-0 m-4">
                 <img
-                  src="/Group 3.svg"
+                  src={`https://firebasestorage.googleapis.com/v0/b/${process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID}/o/Group%203.png?alt=media&token=8fc66b19-0f39-4981-8511-4829c916366c`}
                   alt="Travel Reminders"
                   className="h-[100px] rounded-md"
                 />
@@ -145,7 +146,7 @@ export default function HomePage() {
             <div className="bg-gray-100 p-6 md:p-8 rounded-xl flex-row md:flex md:flex-inline items-center">
               <div className="flex justify-center md:mr-4 md:m-0 m-4">
                 <img
-                  src="/Group 5.svg"
+                  src={`https://firebasestorage.googleapis.com/v0/b/${process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID}/o/Group%205.png?alt=media&token=390d8e4a-281b-49cd-ad43-3a2388577cae`}
                   alt="FAQs & Support"
                   className="h-[90px] rounded-md"
                 />
