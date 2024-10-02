@@ -81,7 +81,7 @@ TrippoBot allows you to plan your trip in a few simple steps:
 
 ## 📧 Contact
 
-If you have any questions or need support, feel free to contact us at [romirbedekar60334@example.com](mailto:romirbedekar60334@example.com).
+If you have any questions or need support, feel free to contact us at [romirbedekar60334@gmail.com](mailto:romirbedekar60334@gmail.com).
 
 ## 🌍 Demo
 
