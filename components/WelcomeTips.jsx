@@ -8,7 +8,7 @@ const steps = [
   {
     title: "Plan your Trip Perfectly using AI",
     subtitle: "Start your journey today",
-    bgImage: "/images/landscape1.jpg",
+    bgImage: "https://github.com/user-attachments/assets/cab219f0-eaca-4604-87de-99e188326f8d",
   },
   {
     title: "Find the Best Destinations",

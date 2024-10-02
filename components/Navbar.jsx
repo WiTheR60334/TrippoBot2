@@ -1,7 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
+import ProtectedRoute from "@/app/authenticated/page";
 
 export default function Navbar() {
+  const { data: session, status } = useSession();
+  const [user, setUser] = useState(null);
+  const [formData, setFormData] = useState({
+    email: session?.user.email,
+  });
   const handleHome = () => {
     window.location.href = "/home";
   };
@@ -34,7 +41,52 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  const extractNameFromEmail = (email) => {
+    if (!email) return "";
+    const namePart = email.split("@")[0];
+    return namePart
+      .split(".")
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+      .join(" ");
+  };
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch("/api/Connector", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: session.user.email }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch user data");
+        }
+
+        const data = await response.json();
+        setFormData(data.body);
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchUserData();
+  }, [session]);
+
+  console.log(formData.email);
+  if (status === "authenticated") {
+    console.log(formData.email);
+  }
+  else{
+    console.log("You are not logged in. Please sign in.");
+  }
+
+
   return (
+    <>
+    <ProtectedRoute>
     <div className="bg-white fixed z-50 w-full top-0 p-4 mb-4 border-b-2 border-b-[var(--b)] flex justify-between outfit items-center">
       <div className="text-3xl font-bold">
         <h1
@@ -107,14 +159,25 @@ export default function Navbar() {
             Pricing
           </li>
 
-          <li
+          {status === "authenticated" && session?.user ? (
+            <li
             className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300 rounded-r-full"
             onClick={handleLogin}
           >
-            Log in
+            {extractNameFromEmail(session.user.email)}
           </li>
+          ) : (
+            <li
+              className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300 rounded-r-full"
+              onClick={handleLogin}
+            >
+              Log in
+            </li>
+          )}
         </ul>
       </div>
     </div>
+    </ProtectedRoute>
+    </>
   );
 }
