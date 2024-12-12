@@ -1,0 +1,62 @@
+.Title{
+    font-size: 1.3rem;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 1.5rem;
+    padding-top: .5rem;
+}
+
+.button2{
+    color: #4b5563;
+}
+
+.accordion-container {
+border-bottom: 1px solid #ddd; /* Add border to the entire accordion */
+overflow: hidden;       /* Ensure content stays within the border */
+}
+
+.accordion-header {
+padding-top: 25px;
+padding-bottom: 10px;
+font-weight: bold;
+cursor: pointer;
+display: flex;
+align-items: center;
+}
+
+.accordion-content {
+padding: 10px;
+overflow: hidden;
+transition: max-height 0.3s ease, opacity 0.3s ease;
+font-size: 15px;
+color: black;
+letter-spacing: 1px;
+}
+
+.title {
+font-size: 19px;
+/* padding-top: 20px; */
+}
+
+.plus-icon {
+transition: transform 0.3s ease;
+}
+
+@media(max-width: 520px){
+    .accordion-header{
+        padding-bottom: 5px;
+    }
+    .title{
+        display: flex;
+        text-align: left;
+        font-size: 1.125rem;
+    }
+    .accordion-content{
+        font-size: .875rem;
+        line-height: 1.5;
+    }
+}

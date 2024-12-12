@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from 'next/image';
 import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
-import HomePage from "./HomePage";
+import HomePage from "../HomePage";
 // import { useRouter } from "next/router"; // Uncomment this if you're using useRouter
 
 

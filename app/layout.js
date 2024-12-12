@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/footer/footer";
 import {Providers} from "./Providers";
 
 const geistSans = localFont({
@@ -22,6 +23,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" style={{ height: "100%", margin: "0" }}>
+      <head>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+      </head>
       {/* <head>
         <style>
           @import
@@ -32,6 +37,9 @@ export default function RootLayout({ children }) {
         <Providers>
         <Navbar />
         {children}
+        <div style={{marginTop: "8rem", borderTop: "1px solid #000"}}>
+          <Footer />
+        </div>
         </Providers>
       </body>
     </html>

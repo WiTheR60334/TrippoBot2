@@ -1,0 +1,486 @@
+/* HomePage.module.css */
+
+/* Main container styling */
+.homeContainer {
+    background-color: white;
+    padding-top: 7rem;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .innerContainer {
+    width: 95%;
+    margin: 0 auto;
+  }
+  
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 1rem;
+    align-items: center;
+    /* padding: 100px; */
+  }
+  
+
+  
+  .textContainer {
+    justify-self: start;
+  }
+  
+  /* Title styling */
+  .title {
+    color: #434de7;
+    font-weight: 700;
+    font-family: sans-serif;
+    line-height: 20px;
+    font-size: 1.5rem;
+  }
+  
+  /* Spacing */
+  .spacing {
+    height: 15px;
+  }
+  
+  /* Heading styling */
+  .heading {
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    margin-left: -5px;
+  }
+  
+  /* Description styling */
+  .description {
+    margin-top: 16px;
+    font-size: 1.15rem;
+    color: #4b5563;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    /* max-width: 70%; */
+  }
+  
+  .wrapper {
+    display: flex;
+    margin-top: 1.75rem;
+    gap: .7rem;
+  }
+  
+  
+  /* Button styling */
+  .tryButton {
+    background-color: #0000FD;
+    align-self: center;
+    margin-top: 0;
+    margin-left: 10px; 
+    color: white; 
+    padding: .75rem 35px;
+    font-size: 1.15rem;
+    font-weight: 500;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px -3px #1d01501a;
+  }
+  
+  /* @media (max-width: 768px) {
+    .tryButton {
+      width: auto;
+      margin-top: 16px;
+    }
+  } */
+  
+  .tryButton:hover {
+    box-shadow: 0 10px 20px -3px white;
+  }
+  
+  /* Image container styling */
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    /* margin-left: -10rem; */
+  }
+  
+  
+  
+  /* Image styling */
+  .image {
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+  }
+  
+
+.typed-words {
+    color: #000;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius: 10px;
+    display: inline-flex;
+    height: 52px;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Main container styling with specific padding for typed animation */
+/* .input-large.typed-animation {
+    padding-left: 15px;
+    padding-right: 15px;
+} */
+
+/* General input styling */
+.inputLarge {
+    color: #000;
+    background-color: #ffffff;
+    border: 1px solid #b7bbd1;
+    border-radius: 10px;
+    min-width: 300px;
+    max-width: 500px;
+    margin-top: 1px;
+    margin-bottom: 0;
+    font-size: 1.15rem;
+    font-weight: 300;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 3px 6px -2px #1d01501a;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    padding: .75rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Styling for the typed words inside the container */
+.typed-words {
+    object-fit: fill;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 52px;
+    font-weight: 400;
+    display: flex;
+    font-size: 1.15rem; /* Setting the font size */
+}
+
+.minFullWidth {
+    /* width: 90%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.minFullWidthMd{
+    width: 95%;
+    margin: 0 auto;
+}
+  
+.header5 {
+    color: #434de7;
+    font-weight: 700;
+    font-family: sans-serif;
+    line-height: 20px;
+    font-size: 1.5rem;
+    margin-top: 11rem;
+    /* letter-spacing: -0.05rem;
+    color: var(--lb);
+    font-weight: 500; */
+}
+
+.header5Md {
+font-size: 1.5rem;
+}
+
+.header3 {
+    /* background: linear-gradient(to right, var(--lg), var(--llg), var(--lg)); */
+    width: 95%;
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.07rem;
+    margin-top: 20px;
+}
+
+.header3Md {
+font-size: 2.75rem;
+width: 40%;
+}
+
+.gridContainerr {
+display: grid;
+grid-template-columns: repeat(1, 1fr);
+gap: 2rem;
+padding: 0;
+}
+
+.gridContainerrMd {
+grid-template-columns: repeat(3, 1fr);
+gap: 2rem;
+}
+
+.card {
+padding: 0.75rem;
+border-radius: 1rem;
+display: flex;
+flex-direction: column;
+background-color: #f9fafb;
+background-image: linear-gradient(180deg, #e5f4ff  22.65%, #fffeff 80.64%);
+box-shadow: 10px 20px 30px 0 #f2f9fe;
+border-radius: 30px;
+}
+
+.cardMd {
+padding: 1.5rem;
+}
+
+.cardHeader {
+font-size: 1.25rem;
+border-radius: 0.375rem;
+font-weight: 500;
+letter-spacing: -0.05rem;
+margin-bottom: 0.75rem;
+}
+
+.cardHeaderMd {
+font-size: 1.5rem;
+display: flex;
+justify-content: center;
+font-weight: 600;
+letter-spacing: .5px;
+}
+
+.imageContainer {
+margin: 0.5rem 0;
+display: flex;
+justify-content: center;
+}
+
+.imagee{
+    width: 340px;
+    height: 240px;
+    border-radius: 10px;
+}
+
+.cardText {
+font-size: 1rem;
+line-height: 1.5;
+padding: 0.5rem;
+}
+
+.cardTextMd {
+font-size: 1.25rem;
+}
+
+@media (max-width: 1025px) {
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .heading {
+    font-size: 3rem;
+    margin-top: 10px;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .inputLarge {
+    min-width: 200px;
+    max-width: 500px;
+    font-size: 15px;
+  }
+
+  .gridContainer {
+    grid-template-columns: 50% 50%;
+    gap: 1rem;
+  }
+
+  .imageContainer {
+    margin-left: 0;
+    /* padding-left: 3rem; */
+  }
+
+  .image{
+    width: 530px;
+    height: 380px;
+  }
+
+  .tryButton{
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 769px) {
+  .homeContainer{
+    padding-top: 4rem;
+  }
+
+  .title{
+    font-size: 1.25rem;
+  }
+
+  .heading {
+    font-size: 2.2rem;
+    margin-top: 5px;
+  }
+
+  .description {
+    font-size: .9rem;
+    line-height: 1.5rem;
+  }
+
+  .homeContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100vh;
+    justify-content: center;
+  }
+
+  .gridContainer {
+    display: grid; 
+    /* grid-template-columns: repeat(auto-fit, minmax(34rem, .1fr)); */
+    grid-template-columns: 1fr;
+    padding: 20px;
+    padding-top: 50px;
+  }
+
+  .imageContainer {
+    margin-top: 2rem;
+  }
+
+  .image{
+    width: 492px;
+    height: 407px;
+  }
+
+  .inputLarge {
+    min-width: 200px;
+    max-width: 500px;
+    font-size: .9rem;
+  }
+
+  .tryButton {
+    padding: .75rem 25px;
+    font-size: .9rem;
+    line-height: 1.5rem;
+    border-radius: 7px;
+  }
+}
+
+@media (max-width: 426px) {
+  .title{
+    font-size: 1.75rem;
+  }
+
+  .heading {
+    font-size: 3.5rem;
+    margin-top: 10px;
+  }
+
+  .description {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+  }
+
+  .gridContainer{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inputLarge {
+    min-width: 200px;
+    max-width: 500px;
+    font-size: 1.5rem;
+    padding: .75rem 25px;
+    margin-top: 1rem;
+  }
+
+  .tryButton {
+    margin-top: 1rem; 
+    padding: .75rem 25px;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 376px) {
+  .title{
+    font-size: 2rem;
+  }
+
+  .heading {
+    font-size: 4rem;
+    margin-top: 10px;
+  }
+
+  .description {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .gridContainer{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inputLarge {
+    min-width: 200px;
+    max-width: 500px;
+    font-size: 1.6rem;
+    padding: .75rem 25px;
+  }
+
+  .tryButton {
+    padding: .75rem 25px;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 321px) {
+  .title{
+    font-size: 2.2rem;
+  }
+
+  .heading {
+    font-size: 4.5rem;
+    margin-top: 15px;
+  }
+
+  .description {
+    font-size: 2rem;
+    line-height: 2.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .gridContainer{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inputLarge {
+    min-width: 400px;
+    max-width: 620px;
+    font-size: 2rem;
+    padding: 1.5rem 25px;
+  }
+
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+  .tryButton {
+    justify-content: baseline;
+    padding: 1.5rem 2rem;
+    font-size: 2rem;
+    line-height: 2.75rem;
+    border-radius: 10px;
+  }
+}

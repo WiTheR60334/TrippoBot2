@@ -1,5 +1,5 @@
-import HomePage from "@/components/HomePage"; // Adjust the path based on your structure
-import Footer from "@/components/footer"; // Adjust the path based on your structure
+import HomePage from "@/components/HomePage/HomePage"; // Adjust the path based on your structure
+import Footer from "@/components/footer/footer"; // Adjust the path based on your structure
 
 export default function ChatPage() {
   return (

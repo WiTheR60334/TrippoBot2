@@ -1,4 +1,4 @@
-import ChatBot from "@/components/ChatBot"; // Adjust the path based on your structure
+import ChatBot from "../../components/ChatBot/ChatBot"; // Adjust the path based on your structure
 
 export default function ChatPage() {
   return (

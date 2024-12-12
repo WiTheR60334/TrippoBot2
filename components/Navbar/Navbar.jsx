@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
 import ProtectedRoute from "@/app/authenticated/page";
 
 export default function Navbar() {
@@ -11,6 +12,12 @@ export default function Navbar() {
   });
   const handleHome = () => {
     window.location.href = "/home";
+  };
+
+  const handleLogout = (redirect = true) => {
+    if (redirect) {
+      signOut({ callbackUrl: "/" });
+    }
   };
 
   const [isOpen, setIsOpen] = useState(false); // State to manage dropdown visibility
@@ -160,9 +167,9 @@ export default function Navbar() {
           </li>
 
           {status === "authenticated" && session?.user ? (
-            <li
+          <li
             className="px-6 py-2 cursor-pointer border-[1px] bg-white text-[var(--g)] hover:bg-[var(--g)] hover:text-white border-gray-300 rounded-r-full"
-            onClick={handleLogin}
+            onClick={handleLogout}
           >
             {extractNameFromEmail(session.user.email)}
           </li>

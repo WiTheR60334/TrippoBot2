@@ -1,5 +1,5 @@
-import ChatBotGold from "@/components/ChatBotGold"; // Adjust the path based on your structure
-import ChatBotDiamond from "../../components/ChatBotDiamond";
+import ChatBotGold from "@/components/ChatBotGold/ChatBotGold"; // Adjust the path based on your structure
+import ChatBotDiamond from "../../components/ChatBotDiamond/ChatBotDiamond";
 
 export default function ChatPage() {
   return (

@@ -1,29 +1,28 @@
 import ChatbotForm from "@/components/ChatbotForm";
-import HomePage from "@/components/HomePage";
-import ChatBot from "@/components/ChatBot";
-import Navbar from "@/components/Navbar";
-import WelcomeTips from "@/components/WelcomeTips";
-import Profile from "@/components/Profile";
-import Pricing from "@/components/Pricing";
-import Footer from "@/components/footer";
+import HomePage from "@/components/HomePage/HomePage";
+import ChatBot from "@/components/ChatBot/ChatBot";
+import Navbar from "@/components/Navbar/Navbar";
+import WelcomeTips from "@/components/WelcomeTips/WelcomeTips";
+import Profile from "@/components/Profile/Profile";
+import Pricing from "@/components/Pricing/Pricing";
+import Footer from "@/components/footer/footer";
+import Whychooseus from "@/components/Whychooseus/Whychooseus";
+import TripGuideSlider from "@/components/TripGuideSlider/TripGuideSlider";
 import Image from "next/image";
-import Feedback from "@/components/feedback"; // Adjust the path based on your structure
+import Feedback from "@/components/feedback/feedback";
 
 
 export default function Home() {
   return (
     <>
-      {/* <HomePage /> */}
-      <WelcomeTips />
-      {/* <Profile /> */}
+      <HomePage />
+      <Whychooseus />
+      <TripGuideSlider />
       <div id="pricing">
       <Pricing />
       </div>
-      <div style={{marginTop: "5rem"}}>
+      <div style={{marginTop: "15rem"}}>
       <Feedback />
-      </div>
-      <div style={{marginTop: "10rem", borderTop: "1px solid #000"}}>
-        <Footer />
       </div>
     </>
   );
