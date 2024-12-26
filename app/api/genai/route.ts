@@ -297,7 +297,7 @@ export async function POST(request: Request) {
 
     try {
         // Step 1: Check if the query is related to flights
-        if (isFlightRelatedQuery(userQuery)) {
+        if (isFlightRelatedQuery(userQuery) && model !== "AURA-3.5") {
             // Step 2: Check if all required flight details are provided
             const { isComplete, missingFields } = hasRequiredFlightDetails(messages);
             console.log('Is complete:', isComplete, 'Missing fields:', missingFields);
@@ -331,6 +331,14 @@ export async function POST(request: Request) {
             // Step 5: Return response
             return stream?.toDataStreamResponse();
             }
+        } else if (isFlightRelatedQuery(userQuery) && model == "AURA-3.5") {
+            const stream = await streamText({
+                model: google("gemini-2.0-flash-exp"),
+                messages: buildGoogleGenAIPrompt2(messages, initialMessage),
+                temperature: 0.7,
+            });
+
+            return stream?.toDataStreamResponse();
         } else {
             // For non-flight-related queries, use a general prompt
             console.log('Non-flight related query:', userQuery);
