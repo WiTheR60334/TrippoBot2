@@ -1,164 +1,157 @@
 "use client";
 import { useState } from "react";
-import {
-  AiOutlineSend,
-  AiOutlinePaperClip,
-  AiOutlinePlus,
-  AiOutlineSave,
-  AiOutlineCopy,
-} from "react-icons/ai";
-import ReactMarkdown from 'react-markdown';
-const handleDiamond = () => {
-  window.location.href = "/chat-diamond";
-};
+import { useChat } from "@ai-sdk/react"
+
 export default function ChatBotGold() {
-  const [messages, setMessages] = useState([
-    { text: "Hello! How can I assist you today?", sender: "bot" },
-    { text: "What are your services?", sender: "user" },
-  ]);
-  const [newMessage, setNewMessage] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const handleSend = async () => {
-    if (newMessage.trim() !== "") {
-      // Add user's message to messages
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { text: newMessage, sender: "user" },
-      ]);
+  // const [messages, setMessages] = useState([]);
+  // const [input, setInput] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
 
-      // Set loading to true
-      setIsLoading(true);
+  const formatBotMessage = (text) => {
+    // Replace markdown-style formatting with HTML/JSX tags
+    return (
+      <div>
+  {text.split("\n").map((line, index) => {
+    // Add bullets or arrows for lines starting with *
+    const formattedLine = line
+      .replace(/^\*\s(\*\*(.*?)\*\*)/, "• <strong>$2</strong>") // Bullet + bold text
+      .replace(/^\*\s/, "• ") // Bullet for single *
+      //.replace(/^\*\s(\*\*(.*?)\*\*)/, "-> <strong>$2</strong>") // Arrow + bold text
+      //.replace(/^\*\s/, "->") // Arrow for single *
+      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // Bold text (**bold**)
+      .replace(/\*(.*?)\*/g, "<em>$1</em>"); // Italic text (*italic*)
 
-      // Fetch bot response
-      const response = await fetch("https://chatbot-backend-yr1g.onrender.com/chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ans: newMessage, // User's message
-          bot: "bot2",     // Specify which bot you want to use
-        }),
-      });
-      console.log(response)
-
-      // Handle response
-      if (response.ok) {
-        
-        const data = await response.json();
-        console.log(data)
-        setMessages((prevMessages) => [
-          ...prevMessages,
-          { text: data.candidates[0].content.parts[0].text, sender: "bot" },
-        ]);
-      } else {
-        console.error("Error sending message", response.statusText);
-      }
-
-      // Clear input field and stop loading
-      setNewMessage("");
-      setIsLoading(false);
-    }
+    return (
+      <p
+        key={index}
+        dangerouslySetInnerHTML={{ __html: formattedLine }}
+        style={{
+          marginBottom: "10px",
+          fontSize: "16px",
+          lineHeight: "1.5",
+        }}
+      />
+    );
+  })}
+</div>
+    );
   };
 
+
+  const {
+    messages,
+    input,
+    handleInputChange,
+    handleSubmit,
+    isLoading,
+    stop,
+    reload,
+    еггог,
+    } = useChat({ api: "/api/genai" });
+
+    
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (!input.trim()) return;
+
+  //   // Add user message
+  //   setMessages((prev) => [...prev, { role: "user", content: input }]);
+  //   setInput("");
+  //   setIsTyping(true);
+
+  //   try {
+  //     // Fetch and stream chatbot's response
+  //     const response = await fetch("/api/genai", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify({ prompt: input }),
+  //     });
+
+  //     if (!response.ok) {
+  //       throw new Error("Error fetching response from server");
+  //     }
+
+  //     const reader = response.body.getReader();
+  //     let decoder = new TextDecoder("utf-8");
+  //     let partialMessage = "";
+
+  //     while (true) {
+  //       const { done, value } = await reader.read();
+  //       if (done) break;
+
+  //       partialMessage += decoder.decode(value);
+  //       setMessages((prev) => {
+  //         const newMessages = [...prev];
+  //         // Update typing message while streaming
+  //         if (isTyping) {
+  //           newMessages[newMessages.length - 1] = {
+  //             role: "bot",
+  //             content: partialMessage,
+  //           };
+  //         } else {
+  //           // Add new bot message once complete
+  //           newMessages.push({ role: "bot", content: partialMessage });
+  //           setIsTyping(false); // End typing indicator
+  //         }
+  //         return newMessages;
+  //       });
+  //     }
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //     setMessages((prev) => [
+  //       ...prev,
+  //       { role: "bot", content: "Sorry, something went wrong. Please try again." },
+  //     ]);
+  //     setIsTyping(false); // End typing indicator on error
+  //   }
+  // };
+
   return (
-    <div className="items-center outfit mesh-gold bg-white mt-10 min-h-screen flex flex-col justify-center">
-      {/* Title Section */}
-      <div className="flex flex-col justify-center items-center mb-5">
-        <h5 className="text-xl md:text-3xl text-center tracking-tight text-[var(--g)] font-medium">
-          Trippo Gold
-        </h5>
-        <h3 className="text-2xl md:text-4xl text-center bg-gradient-to-r from-[hsla(47,100%,77%,1)] via-[#e0aa3e)] to-[#e0aa3e] bg-clip-text text-transparent mb-5 mx-5 font-semibold tracking-tighter">
-          Advanced AI-Assisted Travel Advisor
-        </h3>
-      </div>
-
-      {/* Icons for New Chat and Save Chat */}
-      <div className="flex justify-end w-[90%] md:w-[60%] mb-2">
-        {/* New Chat Icon */}
-        <button className="relative text-[var(--g)] hover:text-[var(--b)] mr-4">
-          <AiOutlinePlus className="h-6 w-6" />
-          <span className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-gray-500 text-white text-xs rounded px-2 py-1 hidden group-hover:block">
-            New Chat
-          </span>
-        </button>
-
-        {/* Save Chat Icon */}
-        <button className="relative text-[var(--g)] hover:text-[var(--b)]">
-          <AiOutlineSave className="h-6 w-6" />
-          <span className="absolute top-8 left-1/2 transform -translate-x-1/2 bg-gray-500 text-white text-xs rounded px-2 py-1 hidden group-hover:block">
-            Save Chat
-          </span>
-        </button>
-      </div>
-
-      {/* Chat Container with Fixed Height */}
-      <div className="flex flex-col rounded-3xl mx-20 bg-white border-gray-200 border-[0.5px] shadow-black/10 shadow-2xl w-[90%] md:w-[70%] h-[500px] md:h-[600px]">
-        {/* Chat messages area with overflow scrolling */}
-        <div className="flex-1 overflow-y-auto md:p-4 p-2 bg-opacity-10 mesh-light backdrop-blur-xl rounded-t-3xl transition-all duration-500 ease-in-out">
-          <div className=" mx-auto">
-            {messages.map((msg, index) => (
-              <div
-                key={index}
-                className={`mb-3 md:p-3 p-2 rounded-xl border-[0.5px] border-gray-300 md:max-w-[60%] max-w-[90%] relative group transition-transform duration-300 ease-in-out ${
-                  msg.sender === "user"
-                    ? "bg-white text-[var(--g)] self-end ml-auto animate-slideUp"
-                    : "bg-white text-[var(--lg)] animate-slideDown"
-                }`}
-              >
-                <ReactMarkdown>{msg.text}</ReactMarkdown>
-
-                {/* Copy Icon (visible on hover) */}
-                {msg.sender === "bot" && (
-                  <button className="absolute top-1/2 right-[-35px] transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-[var(--g)] hover:text-[var(--b)]">
-                    <AiOutlineCopy className="h-5 w-5" />
-                  </button>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Input Field */}
-        <div className="bg-white border-t border-gray-200 px-4 py-2 flex items-center rounded-b-3xl">
-          {/* Upload Icon */}
-          <button className="text-[var(--g)] hover:text-[var(--b)] transition-colors duration-200">
-            <AiOutlinePaperClip className="h-6 w-6" />
-          </button>
-
-          {/* Text Input */}
-          <input
-            type="text"
-            placeholder="Type your message"
-            value={newMessage}
-            onChange={(e) => setNewMessage(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            className="flex-1 mx-4 py-2 px-4 bg-[var(--llg)] outline-none focus:outline-none rounded-full text-[var(--g)] md:text-xl text-lg transition-all duration-300 ease-in-out"
-          />
-          {/* Send Icon */}
-          <button
-            onClick={handleSend}
-            className="text-[var(--g)] hover:text-[var(--b)] duration-200"
+    <div style={{ padding: "20px", maxWidth: "600px", margin: "0 auto" }}>
+      <div
+        style={{
+          border: "1px solid #ccc",
+          borderRadius: "5px",
+          padding: "10px",
+          height: "400px",
+          overflowY: "scroll",
+          marginTop: '7rem'
+        }}
+      >
+        {messages.map((msg, index) => (
+          <p
+            key={index}
+            style={{ textAlign: msg.role === "user" ? "right" : "left" }}
           >
-            <AiOutlineSend className="h-6 w-6" />
-          </button>
-        </div>
+            <strong>{msg.role === "user" ? "You:" : "Bot:"}</strong>
+            {formatBotMessage(msg.content)} 
+            {/* {msg.content} */}
+          </p>
+        ))}
+        {isTyping && <p>Bot is typing...</p>}
       </div>
-      {/* <h5 className="text-md md:text-2xl text-center p-4 tracking-tight text-[var(--g)] font-medium">
-        Want better results? Try Our new{" "}
-        <a className="text-[var(--b)] hover:text-[var(--gr)] cursor-pointer rounded-xl bg-none">
-          Trippo GOLD
-        </a>
-      </h5> */}
-      <h5 className="text-md md:text-xl text-center px-4 py-2 mt-4 bg-white rounded-full tracking-tight text-[var(--g)] font-medium">
-        Need more accuracy? Try
-        <a
-          className="text-[var(--b)] pl-2 hover:text-[var(--gr)] cursor-pointer rounded-xl bg-none"
-          onClick={handleDiamond}
+      <form onSubmit={handleSubmit} style={{ marginTop: "10px", display: "flex", gap: "10px" }}>
+        <input
+          type="text"
+          value={input}
+          onChange={handleInputChange}
+          placeholder="Type your message..."
+          style={{ flex: 1, padding: "10px", borderRadius: "5px", border: "1px solid #ccc" }}
+        />
+        <button
+          type="submit"
+          style={{
+            padding: "10px 20px",
+            backgroundColor: "#007bff",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}
         >
-          Trippo Diamond
-        </a>
-      </h5>
+          Send
+        </button>
+      </form>
     </div>
   );
 }

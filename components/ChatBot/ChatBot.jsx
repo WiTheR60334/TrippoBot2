@@ -35,29 +35,34 @@ export default function ChatBot() {
     // Replace markdown-style formatting with HTML/JSX tags
     return (
       <div className="logoContainer">
-              <div className="logo">
-                <img src="/images/ai_bot.png" alt="AI Bot Logo" />
-              </div>
-      <div className="logoLEFT">
-        {text.split("\n").map((line, index) => {
-          // Handle bold text (**bold**)
-          const formattedLine = line
-            .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-            .replace(/\*(.*?)\*/g, "<em>$1</em>"); // Handle italic text (*italic*)
+        <div className="logo">
+          <img src="/images/ai_bot.png" alt="AI Bot Logo" />
+        </div>
+        <div className="logoLEFT">
+  {text.split("\n").map((line, index) => {
+    // Add bullets or arrows for lines starting with *
+    const formattedLine = line
+      .replace(/^\*\s(\*\*(.*?)\*\*)/, "• <strong>$2</strong>") // Bullet + bold text
+      .replace(/^\*\s/, "• ") // Bullet for single *
+      //.replace(/^\*\s(\*\*(.*?)\*\*)/, "-> <strong>$2</strong>") // Arrow + bold text
+      //.replace(/^\*\s/, "->") // Arrow for single *
+      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // Bold text (**bold**)
+      .replace(/\*(.*?)\*/g, "<em>$1</em>"); // Italic text (*italic*)
 
-          return (
-            <p
-              key={index}
-              dangerouslySetInnerHTML={{ __html: formattedLine }}
-              style={{
-                marginBottom: "10px",
-                fontSize: "16px",
-                lineHeight: "1.5",
-              }}
-            />
-          );
-        })}
-      </div>
+    return (
+      <p
+        key={index}
+        dangerouslySetInnerHTML={{ __html: formattedLine }}
+        style={{
+          marginBottom: "10px",
+          fontSize: "16px",
+          lineHeight: "1.5",
+        }}
+      />
+    );
+  })}
+</div>
+
       </div>
     );
   };
@@ -84,25 +89,28 @@ export default function ChatBot() {
         botSelection = "bot2";
       } else if (selectedModel === "AURA-XR") {
         botSelection = "bot3";
+      } else if(selectedModel === "AURA-3.5") {
+        botSelection = "bot1";
       }
 
-      console.log(botSelection);
-
-      // Fetch bot response
-      const response = await fetch("https://chatbot-backend-yr1g.onrender.com/chat", {
-        method: "POST",
+      const response = await fetch(
+        `http://localhost:8000/api/chat?ans=${encodeURIComponent(newMessage)}&bot=${botSelection}`,
+        {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          ans: newMessage,
-          bot: botSelection,
-        }),
+        // body: JSON.stringify({
+        //   ans: newMessage,
+        //   bot: botSelection,
+        // }),
       });
 
       if (response.ok) {
         const data = await response.json();
-        const botResponse = data.candidates[0].content.parts[0].text;
+        // const botResponse = data.candidates[0].content.parts[0].text;
+        const botResponse = data.response.candidates[0].content.parts[0].text;
+        // const botResponse = data.text;
 
         // Add bot's response to messages
         setMessages((prevMessages) => [

@@ -1,0 +1,25 @@
+
+// export const initialMessage = {
+//     role: "user",
+//     content: 
+//       "\"Create a travel assistant chatbot that can assist users in planning and booking trips. The chatbot should be capable of the following tasks:\n\n1. **Destination Suggestions:** Based on user preferences (e.g., adventure, relaxation, family-friendly), suggest top travel destinations, including details such as activities, weather, and local culture.\n   \n2. **Hotel Booking Assistance:** Offer users hotel recommendations based on their location, budget, and preferences. Include price comparisons across multiple platforms like Booking.com, Expedia, or Airbnb, and recommend the best value options.\n\n3. **Flight Booking Assistance:** Provide flight options, prices, and flight schedules, comparing different airlines and travel booking platforms.\n\n4. **Itinerary Planning:** Help users create personalized itineraries, offering advice on things to do, places to visit, and time allocation for each activity. Allow users to modify and adjust the itinerary as per their needs.\n\n5. **Price Comparison:** Compare prices for accommodation, flights, and activities across various online booking platforms, highlighting the most cost-effective options.\n\n6. **Travel Tips and Recommendations:** Offer tips for smooth travel, including visa requirements, transportation options, and essential items to pack for specific destinations.\n\n7. **Real-Time Information:** Provide updates on flight status, hotel availability, and any changes related to travel plans.\n\nThe chatbot should be capable of answering travel-related inquiries with accurate and up-to-date information. It should also be able to handle multiple languages and offer responses in the user’s preferred language.\n\nIntegrate web scraping techniques to fetch live data such as prices, availability, and reviews from different travel websites. Ensure responses are user-friendly, clear, and helpful, with a conversational tone.\"\n\nThis prompt can guide Gemini to assist with key travel-related tasks while providing users with a seamless and informative travel planning experience."
+// };
+
+export const initialMessageXR = {
+  role: "user",
+  content: 
+    "\"Create a premium travel assistant chatbot for Diamond-tier users with advanced capabilities. The chatbot should:\n\n" +
+    "1. **Destination Suggestions:** Offer highly personalized destination recommendations based on the user's preferences, including detailed descriptions of activities, weather, local culture, and exclusive tips for making the most of the trip.\n\n" +
+    "2. **Hotel Booking Assistance:** Provide hotel recommendations tailored to the user's budget, preferences, and travel style, including comprehensive price comparisons across platforms such as Booking.com, Expedia, and Airbnb. Highlight the best deals and top-rated options.\n\n" +
+    "3. **Flight Booking Assistance:** Fetch and display the **top 10 flight options** from the API, including key details like airline, price, travel duration, and schedule. Analyze and suggest which flight would be the best option based on factors such as cost, travel time, and convenience.\n\n" +
+    "   The chatbot should assist users in making informed decisions by providing personalized advice, such as:\n" +
+    "   - 'Flight A is the most cost-effective option with minimal layovers.'\n" +
+    "   - 'Flight B is a direct flight and saves you 2 hours, but it costs slightly more.'\n" +
+    "   - 'For comfort, consider Flight C, which offers premium seating at a reasonable price.'\n\n" +
+    "4. **Itinerary Planning:** Create highly customized travel itineraries that include detailed activity plans, must-visit places, and optimized time allocations. Allow users to review, adjust, and finalize their plans with ease.\n\n" +
+    "5. **Price Comparison:** Offer advanced price comparisons for hotels, flights, and activities across multiple platforms, ensuring users get the best possible deals.\n\n" +
+    "6. **Travel Tips and Recommendations:** Provide in-depth travel advice, including visa requirements, recommended transportation methods, local dining suggestions, and packing checklists tailored to the specific destination.\n\n" +
+    "7. **Real-Time Information:** Deliver real-time updates on flight statuses, hotel availability, booking confirmations, and any changes to travel plans to ensure a stress-free travel experience.\n\n" +
+    "The chatbot should have a conversational tone, provide detailed and actionable recommendations, and proactively assist users in making confident travel decisions. This Diamond-tier experience should offer a seamless, premium travel planning process with real-time assistance and insights.\"\n\n" +
+    "This prompt enables Gemini to deliver an advanced, highly personalized, and decision-supportive travel assistant experience for Diamond-tier users."
+};
