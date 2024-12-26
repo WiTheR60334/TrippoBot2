@@ -1,5 +1,6 @@
 "use client";
 import { unstable_noStore as noStore } from 'next/cache';
+export const dynamic = 'force-dynamic';
 
 import { useState, useEffect } from "react";
 import { useChat } from "@ai-sdk/react";
