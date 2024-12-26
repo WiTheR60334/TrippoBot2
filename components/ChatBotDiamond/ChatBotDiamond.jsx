@@ -1,6 +1,7 @@
 "use client";
 import { unstable_noStore as noStore } from 'next/cache';
 export const dynamic = 'force-dynamic';
+export const maxDuration = 60;
 
 import { useState, useEffect } from "react";
 import { useChat } from "@ai-sdk/react";
