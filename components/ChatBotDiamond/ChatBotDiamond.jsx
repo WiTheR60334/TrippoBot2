@@ -1,7 +1,5 @@
 "use client";
-export const dynamic = 'force-dynamic';
-export const maxDuration = 60;
-
+import { unstable_noStore as noStore } from 'next/cache';
 
 import { useState, useEffect } from "react";
 import { useChat } from "@ai-sdk/react";
@@ -10,6 +8,7 @@ import Accordion from "../Accordion/Accordion";
 import "./ChatBotDiamond.css";
 
 export default function ChatBot() {
+  noStore();
   const [selectedModel, setSelectedModel] = useState("AURA-3.5");
   const [showSuggestions, setShowSuggestions] = useState(true);
 
