@@ -141,7 +141,9 @@ export default function ChatBot() {
                   message.role === "user" ? "justify-end" : "justify-start"
                 } my-2`}              >
               {message.role === "assistant" ? (
-                <div style={{ margin: "1rem 0" }}>{formatBotMessage(message.content)}</div>
+                <div style={{ margin: "1rem 0" }}>
+                  {console.log(message.content)}
+                  {formatBotMessage(message.content)}</div>
               ) : (
                 <div
                   className={`py-2 px-4 rounded-lg ${
