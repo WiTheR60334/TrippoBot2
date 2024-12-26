@@ -1,3 +1,6 @@
+export const maxDuration = 60;
+export const dynamic = 'force-dynamic';
+
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
