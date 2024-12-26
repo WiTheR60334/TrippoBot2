@@ -1,4 +1,8 @@
 "use client";
+export const dynamic = 'force-dynamic';
+export const maxDuration = 60;
+
+
 import { useState, useEffect } from "react";
 import { useChat } from "@ai-sdk/react";
 import { AiOutlineSend, AiOutlinePaperClip } from "react-icons/ai";
