@@ -1,5 +1,5 @@
-export const maxDuration = 60;
-export const dynamic = 'force-dynamic';
+import { unstable_noStore as noStore } from 'next/cache';
+
 
 import localFont from "next/font/local";
 import "./globals.css";
@@ -24,6 +24,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  noStore();
   return (
     <html lang="en" style={{ height: "100%", margin: "0" }}>
       <head>
