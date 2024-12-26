@@ -1,5 +1,6 @@
 import { unstable_noStore as noStore } from 'next/cache';
 export const dynamic = 'force-dynamic';
+export const maxDuration = 60;
 
 
 import localFont from "next/font/local";
