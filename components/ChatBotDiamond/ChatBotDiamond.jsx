@@ -1,11 +1,17 @@
 "use client";
+import { unstable_noStore as noStore } from 'next/cache';
+export const dynamic = 'force-dynamic';
+export const maxDuration = 60;
+
 import { useState, useEffect } from "react";
 import { useChat } from "@ai-sdk/react";
 import { AiOutlineSend, AiOutlinePaperClip } from "react-icons/ai";
 import Accordion from "../Accordion/Accordion";
 import "./ChatBotDiamond.css";
+import ChatMessage from "../FlightTable/FlightTable";
 
 export default function ChatBot() {
+  noStore();
   const [selectedModel, setSelectedModel] = useState("AURA-3.5");
   const [showSuggestions, setShowSuggestions] = useState(true);
 
@@ -70,7 +76,135 @@ export default function ChatBot() {
               </div>
             );
           };
-        
+
+  const ChatMessage = ({ htmlContent }) => {
+    return (
+      <div
+        dangerouslySetInnerHTML={{ __html: htmlContent }}
+      />
+    );
+  };
+
+  const flightData = [
+    { time: "9:30 PM – 12:00 AM", airline: "Air India", duration: "2 hr", route: "AMD – PNQ", price: "$120" },
+    { time: "10:00 PM – 1:30 AM", airline: "IndiGo", duration: "3 hr 30 min", route: "AMD – BLR – PNQ", price: "$150" },
+  ];
+  
+  const FlightDetailsTable = () => {
+    return (
+      <div className="flight-details">
+        <table className="table-auto w-full rounded-lg" style={{ borderCollapse: 'separate', borderRadius: '10px', overflow: 'hidden' }}>
+          <tbody>
+            <tr style={{ height: '72px' }}>
+              <td style={{ padding: '16px 0', verticalAlign: 'top' }}>
+                <div>9:30 PM – 12:00 AM</div>
+                <div style={{ fontSize: '0.85rem', color: '#6b7280' }}>Air India</div>
+              </td>
+              <td style={{ padding: '16px 0' }}>AMD – PNQ</td>
+              <td style={{ padding: '16px 0' }}>2 hr</td>
+              <td style={{ padding: '16px 0', fontWeight: 'bold' }}>$120</td>
+            </tr>
+            <tr style={{ height: '72px' }}>
+              <td style={{ padding: '16px 0', verticalAlign: 'top' }}>
+                <div>10:00 PM – 1:30 AM</div>
+                <div style={{ fontSize: '0.85rem', color: '#6b7280' }}>IndiGo</div>
+              </td>
+              <td style={{ padding: '16px 0' }}>AMD – BLR – PNQ</td>
+              <td style={{ padding: '16px 0' }}>3 hr 30 min</td>
+              <td style={{ padding: '16px 0', fontWeight: 'bold' }}>$150</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    );
+  };  
+  
+  const FlightResult = () => {
+    return (
+      <div
+        className="container flight-trip"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'min-content 1.75fr 1fr 1.25fr 1.25fr',
+          alignItems: 'center',
+          fontSize: '16px',
+          lineHeight: 1.3,
+          padding: '16px 0',
+          minHeight: '72px',
+          backgroundColor: '#f0f4f9',
+          borderRadius: '12px',
+        }}
+      >
+        {/* Airline Logo */}
+        <img
+          alt="airline logo"
+          className="airline-logo"
+          src="https://www.gstatic.com/flights/airline_logos/70px/6E.png"
+          style={{
+            height: '40px',
+            width: '40px',
+          }}
+        />
+  
+        {/* Flight Details */}
+        <div
+          className="trip-details data-field"
+          style={{
+            display: 'grid',
+            margin: '0 16px',
+            color: 'var(--gem-sys-color--on-surface)',
+            paddingLeft: '1rem'
+          }}
+        >
+          <div className="flight-times" style={{ fontWeight: 'bold' }}>
+            2:45 AM – 3:50 AM
+          </div>
+          <div className="airline-name" style={{ fontSize: '0.85rem', color: '#6b7280' }}>
+            IndiGo
+          </div>
+        </div>
+  
+        {/* Flight Overview */}
+        <div
+          className="flight-overview data-field"
+          style={{
+            margin: '0 16px',
+            color: 'var(--gem-sys-color--on-surface)',
+            textAlign: 'center',
+          }}
+        >
+          AMD – PNQ
+        </div>
+  
+        {/* Stop Info */}
+        <div
+          className="stop-info data-field"
+          style={{
+            margin: '0 16px',
+            textAlign: 'center',
+          }}
+        >
+        <span className="duration">1 hr 5 min</span>
+        </div>
+  
+        {/* Price */}
+        <div
+          className="price data-field"
+          style={{
+            margin: '0 16px',
+            textAlign: 'right',
+            paddingRight: '1rem'
+          }}
+        >
+<div className="flight-times" style={{ fontWeight: 'bold' }}>
+          ₹8,339
+          </div>
+          <div className="airline-name" style={{ fontSize: '0.85rem', color: '#6b7280' }}>
+          round trip
+          </div>        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="hi items-center outfit bg-white min-h-screen mt-10 flex flex-col justify-center">
@@ -83,6 +217,7 @@ export default function ChatBot() {
           Your Personal AI-Assisted Travel Advisor
         </h3>
       </div>
+      
 
       {/* Chat Container */}
       <div className="chatContainer">
@@ -108,6 +243,9 @@ export default function ChatBot() {
             </button>
           </div>
         </div>
+
+        {/* <FlightDetailsTable /> */}
+        {/* <FlightResult /> */}
 
         <div className="chatArea flex flex-col rounded-3xl bg-white shadow-black/10 shadow-2xl">
           {/* Suggestions Section */}
@@ -141,7 +279,9 @@ export default function ChatBot() {
                   message.role === "user" ? "justify-end" : "justify-start"
                 } my-2`}              >
               {message.role === "assistant" ? (
-                <div style={{ margin: "1rem 0" }}>{formatBotMessage(message.content)}</div>
+                <div style={{ margin: "1rem 0" }}>
+                  {console.log(message.content)}
+                  {formatBotMessage(message.content)}</div>
               ) : (
                 <div
                   className={`py-2 px-4 rounded-lg ${
@@ -193,17 +333,6 @@ export default function ChatBot() {
                 <AiOutlineSend className="h-[1.125rem] w-[1.125rem] sm:w-6 sm:h-6" />
               </button>
             </form>
-          </div>
-        </div>
-      </div>
-
-
-      <div className="Suggestions">
-        <div className="content">
-          <div className="header5">Best Practices</div>
-          <div className="header3">How to Leverage AI for Smart Travel Planning</div>
-          <div className="para">
-            Designed to simplify your travel planning through the strength of OpenAI's GPT models, our chatbot is a gateway to personalized, insightful travel recommendations. Follow these best practices to unlock its full potential.
           </div>
         </div>
       </div>

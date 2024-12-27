@@ -1,3 +1,7 @@
+import { unstable_noStore as noStore } from 'next/cache';
+export const dynamic = 'force-dynamic';
+export const maxDuration = 60;
+
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
@@ -21,6 +25,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  noStore();
   return (
     <html lang="en" style={{ height: "100%", margin: "0" }}>
       <head>

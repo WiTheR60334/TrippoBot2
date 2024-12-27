@@ -300,6 +300,7 @@ export async function POST(request: Request) {
         if (isFlightRelatedQuery(userQuery) && model !== "AURA-3.5") {
             // Step 2: Check if all required flight details are provided
             const { isComplete, missingFields } = hasRequiredFlightDetails(messages);
+            const flightFlag = true;
             console.log('Is complete:', isComplete, 'Missing fields:', missingFields);
 
             if (!isComplete) {

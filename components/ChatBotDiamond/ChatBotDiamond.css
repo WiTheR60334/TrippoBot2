@@ -243,6 +243,29 @@
    background-color: #f7f7f7;
 } */
 
+.flight-details table {
+  width: 100%;
+  border-collapse: separate;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+  background-color: #f0f4f9;  ;
+  padding: 1rem;
+}
+
+.flight-details td {
+  height: 72px;
+  padding: 16px 0;
+}
+
+.flight-details td:first-child div:nth-child(2) {
+  font-size: 0.85rem;
+  color: #6b7280; /* Tailwind's gray-500 equivalent */
+}
+
+.flight-details td:last-child {
+  font-weight: bold;
+}
+
 
 @media(max-width: 1025px){
   .logoLEFT{
