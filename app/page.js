@@ -15,7 +15,9 @@ import Feedback from "@/components/feedback/feedback";
 export default function Home() {
   return (
     <>
+      <div style={{marginTop: "2rem"}}>
       <HomePage />
+      </div>
       <Whychooseus />
       <TripGuideSlider />
       <div id="pricing">
