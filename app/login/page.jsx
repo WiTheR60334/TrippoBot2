@@ -1,7 +1,7 @@
 "use client";
 import { signIn, useSession } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { SessionProvider } from "next-auth/react";
 
@@ -15,13 +15,16 @@ export default function Home() {
   const [error, setError] = useState("");
   const { status } = useSession();
 
-  useEffect(() => {
-    if (status === "authenticated") {
-      router.replace("/");
-    } else {
-      router.replace("/login");
-    }
-  }, [status, router]);
+  if (status === "loading") {
+    // Display a loading spinner or placeholder while session status is being determined
+    return <div className="flex items-center justify-center h-screen">Loading...</div>;
+  }
+
+  if (status === "authenticated") {
+    // Redirect immediately if authenticated
+    router.push("/");
+    return null; // Prevent rendering the login page
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,7 +49,6 @@ export default function Home() {
 
     if (res?.error) {
       setError("Invalid email or password");
-      if (res?.url) router.push("/");
     } else {
       setError("");
     }
@@ -56,14 +58,13 @@ export default function Home() {
     <SessionProvider session={status}>
       <div className="flex flex-col outfit items-center mesh justify-center min-h-screen mx-4">
         <div className="md:w-[50%] w-[90%] bg-white flex border-[1px] border-gray-300 flex-col p-8 rounded-3xl shadow-black/10 shadow-2xl">
-          <h3 className="md:text-6xl  text-2xl text-center md:text-left text-[var(--gr)] tracking-tight font-semibold mb-2">
+          <h3 className="md:text-6xl text-2xl text-center md:text-left text-[var(--gr)] tracking-tight font-semibold mb-2">
             Welcome to <a className="text-[var(--b)]">Trippo.ai</a>
           </h3>
           <p className="text-[var(--g)] text-center md:text-left text-md leading-5 md:text-3xl">
             Log in with credentials
           </p>
           <hr className="my-7"></hr>
-          {/* <div className="flex justify-center">Log in with credentials</div> */}
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col justify-center">
               Email

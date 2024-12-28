@@ -1,14 +1,25 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./HomePage.module.css";
+import { Helmet } from 'react-helmet';
 import Typed from "typed.js";
 import { useRouter } from "next/router";
-import { useState } from "react";
 
 export default function HomePage() {
   const startChat = () => {
     window.location.href = "/chatbot";
+  };
+  const [isLongInput, setIsLongInput] = useState(false);
+
+  const handleInputChange = (e) => {
+    const inputLength = e.target.value.length;
+    // Adjust the threshold based on your design (e.g., 20 characters or more)
+    if (inputLength > 20) {
+      setIsLongInput(true);
+    } else {
+      setIsLongInput(false);
+    }
   };
 
   useEffect(() => {
@@ -44,16 +55,16 @@ export default function HomePage() {
               <h4 className={styles.description}>
                 TrippoBot is an AI-powered travel assistant that helps users plan trips effortlessly. From destination info to booking suggestions, TrippoBot makes travel planning easy and enjoyable, providing seamless itinerary planning and price comparisons for a stress-free experience.
               </h4>
-              <div className={styles.wrapper}>
-              <div className={styles.inputLarge}>
+              <div className={styles.wrapper} style={{ flexDirection: isLongInput ? 'column' : 'row' }}>
+                <div className={styles.inputLarge}>
                 <div id="typed-words" class="typed-words"></div>
-              </div>
-              <button className={styles.tryButton} onClick={startChat}>
-                Try it
-              </button>
+                </div>
+                <button className={styles.tryButton} onClick={startChat}>
+                  Try it
+                </button>
               </div>
             </div>
-            <div className={styles.imageContainer}>
+            {/* <div className={styles.imageContainer}>
               <Image
                 src="https://firebasestorage.googleapis.com/v0/b/trippo-a1603.appspot.com/o/Group.png?alt=media&token=1ce9a646-20a0-4313-a9c9-a79375bfee80"
                 alt="Travel Reminders"
@@ -61,7 +72,7 @@ export default function HomePage() {
                 height={500}
                 className={styles.image}
               />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className={styles.minFullWidth}>
