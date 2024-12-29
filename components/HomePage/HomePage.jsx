@@ -81,76 +81,76 @@ export default function HomePage() {
         </div>
         <div className={styles.minFullWidth}>
           <div className={styles.minFullWidthMd}>
-      <h5 className={`${styles.header5} ${styles.header5Md}`}>
-        Try very useful
-      </h5>
-      <h3 className={`${styles.header3} ${styles.header3Md}`}>
-        Our AI Toooooooools
-      </h3>
-      <div className={`${styles.gridContainerr} ${styles.gridContainerrMd}`}>
-        {/* Destination Planner */}
-        <div className={`${styles.card} ${styles.cardMd}`}>
-          <h3 className={`${styles.cardHeader} ${styles.cardHeaderMd}`}>
-            Destination Planner
-          </h3>
-          <div className={styles.imageContainer}>
-            <img
-              src={`https://firebasestorage.googleapis.com/v0/b/${process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID}/o/Destination.png?alt=media&token=d748993f-707a-4efd-94ec-57ce06aa0357`}
-              // src="./images/How-an-AI-Trip-Planner-Is-Making-Tourism-Smarter.png "
-              alt="Destination"
-              width={360}
-              height={360}
-              className={styles.imagee}
-            />
-          </div>
-          <p className={`${styles.cardText} ${styles.cardTextMd}`}>
-            Get popular attractions, local culture, cuisine, and events
-            happening during the user&apos;s travel dates.
-          </p>
-        </div>
+            <h5 className={`${styles.header5} ${styles.header5Md}`}>
+              Try very useful
+            </h5>
+            <h3 className={`${styles.header3} ${styles.header3Md}`}>
+              Our AI Toooooooools
+            </h3>
+            <div className={`${styles.gridContainerr} ${styles.gridContainerrMd}`}>
+              {/* Destination Planner */}
+              <div className={`${styles.card} ${styles.cardMd}`}>
+                <h3 className={`${styles.cardHeader} ${styles.cardHeaderMd}`}>
+                  Destination Planner
+                </h3>
+                <div className={styles.imageContainer}>
+                  <img
+                    src={`https://firebasestorage.googleapis.com/v0/b/${process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID}/o/Destination.png?alt=media&token=d748993f-707a-4efd-94ec-57ce06aa0357`}
+                    // src="./images/How-an-AI-Trip-Planner-Is-Making-Tourism-Smarter.png "
+                    alt="Destination"
+                    width={360}
+                    height={360}
+                    className={styles.imagee}
+                  />
+                </div>
+                <p className={`${styles.cardText} ${styles.cardTextMd}`}>
+                  Get popular attractions, local culture, cuisine, and events
+                  happening during the user&apos;s travel dates.
+                </p>
+              </div>
 
-        {/* Itinerary Planner */}
-        <div className={`${styles.card} ${styles.cardMd}`}>
-          <h3 className={`${styles.cardHeader} ${styles.cardHeaderMd}`}>
-            Itinerary Planner
-          </h3>
-          <div className={styles.imageContainer}>
-            <img
-              src={`https://firebasestorage.googleapis.com/v0/b/${process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID}/o/Itenary.jpg?alt=media&token=6fd86271-1f62-401a-a86c-fc89a3926184`}
-              alt="Itinerary"
-              width={360}
-              height={360}
-              className={styles.imagee}
-            />
-          </div>
-          <p className={`${styles.cardText} ${styles.cardTextMd}`}>
-            Provide users with personalized travel itineraries, activity
-            suggestions, and restaurant recommendations.
-          </p>
-        </div>
+              {/* Itinerary Planner */}
+              <div className={`${styles.card} ${styles.cardMd}`}>
+                <h3 className={`${styles.cardHeader} ${styles.cardHeaderMd}`}>
+                  Itinerary Planner
+                </h3>
+                <div className={styles.imageContainer}>
+                  <img
+                    src={`https://firebasestorage.googleapis.com/v0/b/${process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID}/o/Itenary.jpg?alt=media&token=6fd86271-1f62-401a-a86c-fc89a3926184`}
+                    alt="Itinerary"
+                    width={360}
+                    height={360}
+                    className={styles.imagee}
+                  />
+                </div>
+                <p className={`${styles.cardText} ${styles.cardTextMd}`}>
+                  Provide users with personalized travel itineraries, activity
+                  suggestions, and restaurant recommendations.
+                </p>
+              </div>
 
-        {/* Booking Assistant */}
-        <div className={`${styles.card} ${styles.cardMd}`}>
-          <h3 className={`${styles.cardHeader} ${styles.cardHeaderMd}`}>
-            Booking Assistant
-          </h3>
-          <div className={styles.imageContainer}>
-            <img
-              src={`https://firebasestorage.googleapis.com/v0/b/${process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID}/o/Booking.png?alt=media&token=ca512010-a15e-4bcb-b5ff-313f1d9cea7e`}
-              alt="Booking"
-              width={360}
-              height={360}
-              className={styles.imagee}
-            />
+              {/* Booking Assistant */}
+              <div className={`${styles.card} ${styles.cardMd}`}>
+                <h3 className={`${styles.cardHeader} ${styles.cardHeaderMd}`}>
+                  Booking Assistant
+                </h3>
+                <div className={styles.imageContainer}>
+                  <img
+                    src={`https://firebasestorage.googleapis.com/v0/b/${process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID}/o/Booking.png?alt=media&token=ca512010-a15e-4bcb-b5ff-313f1d9cea7e`}
+                    alt="Booking"
+                    width={360}
+                    height={360}
+                    className={styles.imagee}
+                  />
+                </div>
+                <p className={`${styles.cardText} ${styles.cardTextMd}`}>
+                  Help users compare flight, hotel, and transportation options to
+                  ease the booking process.
+                </p>
+              </div>
+            </div>
           </div>
-          <p className={`${styles.cardText} ${styles.cardTextMd}`}>
-            Help users compare flight, hotel, and transportation options to
-            ease the booking process.
-          </p>
         </div>
-      </div>
-      </div>
-    </div>
     {/* <div className={`${styles.sectionContainer} ${styles.sectionContainerMd}`}>
       <div className={styles.headerContainer}>
         <h5 className={`${styles.header5} ${styles.header5Md}`}>

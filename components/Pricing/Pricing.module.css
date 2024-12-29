@@ -118,3 +118,30 @@ margin-bottom: 1rem;
     background-color: #434de7;
     color: white;
 }
+
+@media (max-width: 1025px){
+    .header5{
+        margin-top: 10rem;
+        font-size: 20px;
+    }
+    .header3{
+        margin-bottom: 2.5rem;
+        font-weight: 600;
+        letter-spacing: -0.07rem;
+        margin-top: 20px;
+        font-size: 2.75rem;
+    }
+    .gridContainerr{
+        margin-top: 20px;
+    }
+    .cardHeaderMd{
+        justify-content: center;
+    }
+    .pricing{
+        display: flex;
+        justify-content: center;
+    }
+    .cardText{
+        font-size: 16px;
+    }
+}

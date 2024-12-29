@@ -139,7 +139,7 @@ const Pricing = () => {
             $9.99 / mo
           </div>
           <p className={`${styles.cardText} ${styles.cardTextMd}`}>
-          Enhanced support with additional perks, including personalized itinerary planning and exclusive deals. Chatbot responses improve with tailored recommendations.
+          Enhanced support with additional perks, including personalized itinerary planning and exclusive deals. Improved Responses.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center'}}>
             <div className={styles.button}>

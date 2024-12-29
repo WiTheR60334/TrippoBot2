@@ -18,7 +18,8 @@ function TripGuideSlider() {
                         Crafted with explorers in mind.
                     </h3>
                     <div className={styles.para}>
-                        We see a tremendous opportunity to provide a seamless experience for planning and enjoying your next adventure. Our mission is to deliver intuitive, user-friendly solutions for travelers across the globe. By integrating cutting-edge technology, we empower users to explore, book, and create unforgettable memories effortlessly.                    </div>
+                        Experience effortless travel planning with <strong>TrippoBot</strong>! Customize itineraries, find great deals, and get real-time updates—all in seconds. Enjoy seamless support and start your journey stress-free!
+                    </div>
                     <div className={styles.button}>
                         <button onClick={about} >
                             Learn More

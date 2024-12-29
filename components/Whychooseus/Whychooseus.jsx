@@ -27,8 +27,7 @@ function Whychooseus() {
                             Travel Smarter, Not Harder!
                         </h3>
                         <div className={styles.para}>
-                        Highlight the key reasons users should choose TrippoBot, such as saving time in travel planning, getting personalized itinerary recommendations, comparing prices across platforms, and receiving real-time updates. You could also emphasize how the chatbot's responses get better with each interaction and how it provides seamless support for all travel needs, making the experience enjoyable and stress-free.
-                        </div>
+                        Choose TrippoBot for stress-free travel! Plan instantly, get personalized itineraries, compare prices, and enjoy real-time updates. Seamless support and smarter interactions make every journey easier. Your perfect trip starts here!                        </div>
                         <div className={styles.button}>
                             <button onClick={chat}>
                                 Chat Now

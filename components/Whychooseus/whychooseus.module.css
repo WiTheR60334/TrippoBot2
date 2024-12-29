@@ -79,3 +79,37 @@ font-size: 1.5rem;
     background-color: #434de7;
     color: white;
 }
+
+@media (max-width: 1025px){
+    .gridContainer{
+        margin-top: 10rem;
+    }
+    .minFullWidthMd{
+        width: 100%;
+    }
+    .header5{
+        font-size: 20px;
+    }
+    .header3{
+        font-size: 44px;
+        margin-bottom: 0.2rem;
+        margin-top: 1rem;
+        line-height: 1.1;
+    }
+    .para{
+        display: flex;
+        font-size: 16px;
+        margin-top: 15px;
+        color: #4b5563;
+    }
+    .button{
+        margin-top: 1rem;
+    }
+    .pic{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1.5rem;
+        padding-right: 1rem;
+    }
+}

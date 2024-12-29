@@ -315,6 +315,23 @@ font-size: 1.25rem;
   .tryButton{
     border-radius: 8px;
   }
+
+  .cardHeader{
+    font-size: 20px;
+  }
+
+  .cardText{
+    font-size: 16px;
+  }
+
+  .imagee{
+    width: auto;
+    height: 172px;
+  }
+
+  .header3{
+    width: 100%;
+  }
 }
 
 @media (max-width: 769px) {
@@ -384,27 +401,25 @@ font-size: 1.25rem;
     display: grid;
     grid-template-columns: 1fr .4fr;
   }
+  .header5{
+    font-size: 20px;
+  }
+  .header3{
+    font-size: 35.2px;
+  }
 }
 
-@media (max-width: 395px) {
+@media (max-width: 413px) {
   .wrapper{
     grid-template-columns: 1fr .4fr;
   }
-}
-
-@media (max-width: 391px) {
-  .wrapper{
-    grid-template-columns: 1fr .5fr;
+  .tryButton{
+    padding: .75rem 20px;
+    font-size: 14.4px;
   }
 }
 
-@media (max-width: 371px) {
-  .wrapper{
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 361px) {
+@media (max-width: 376px) {
   .wrapper{
     display: flex !important;
     flex-direction: column !important;
