@@ -195,7 +195,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: .5rem;
-    padding-bottom: .5rem;
+    padding-bottom: .5rem !important;
     width: 100%;
   }
   
@@ -227,6 +227,7 @@
     height: 40px;
     width: 100%;
     margin-bottom: .5rem;
+    margin-top: 1rem;
   }
   
   .google:hover{
