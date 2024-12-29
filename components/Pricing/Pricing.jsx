@@ -120,7 +120,7 @@ const Pricing = () => {
             free
           </div>
           <p className={`${styles.cardText} ${styles.cardTextMd}`}>
-          Essential travel assistance with core features for planning and booking. Chatbot responses are basic & limited but reliable.
+          Essential travel assistance with core features for planning and booking. Chatbot responses are basic & limited but reliable. Realtime info not aviailable.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center'}}>
             <div className={styles.button}>
@@ -139,7 +139,7 @@ const Pricing = () => {
             $9.99 / mo
           </div>
           <p className={`${styles.cardText} ${styles.cardTextMd}`}>
-          Enhanced support with additional perks, including personalized itinerary planning and exclusive deals. Improved Responses.
+          Enhanced support with additional perks, including personalized itinerary planning and exclusive deals. Improved Responses of chatbot.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center'}}>
             <div className={styles.button}>

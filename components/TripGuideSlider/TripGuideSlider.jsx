@@ -18,7 +18,8 @@ function TripGuideSlider() {
                         Crafted with explorers in mind.
                     </h3>
                     <div className={styles.para}>
-                        Experience effortless travel planning with <strong>TrippoBot</strong>! Customize itineraries, find great deals, and get real-time updates—all in seconds. Enjoy seamless support and start your journey stress-free!
+                    Discover the ultimate travel companion with <strong style={{color: "black"}}>TrippoBot</strong>! From planning your dream getaway to customizing itineraries and finding the best deals, our chatbot does it all in seconds. Say goodbye to stress and hello to effortless travel planning with real-time updates and personalized recommendations.
+                        {/* Experience effortless travel planning with <strong>TrippoBot</strong>! Customize itineraries, find great deals, and get real-time updates—all in seconds. Enjoy seamless support and start your journey stress-free! */}
                     </div>
                     <div className={styles.button}>
                         <button onClick={about} >
@@ -30,8 +31,6 @@ function TripGuideSlider() {
                     <img 
                     src={`https://firebasestorage.googleapis.com/v0/b/${process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID}/o/istockphoto-1500563478-612x612.jpg?alt=media&token=aeb6e152-0016-4c19-b2fb-0af1b1e50ac4`} 
                     alt=""
-                    width={530}
-                    height={300}
                     className={styles.image} 
                     />
                 </div>

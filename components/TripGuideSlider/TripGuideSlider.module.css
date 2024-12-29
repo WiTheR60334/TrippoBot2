@@ -40,9 +40,8 @@ font-size: 1.5rem;
 
 .gridContainer{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 60% 40%;
     padding: 0;
-    gap: 2rem;
     margin-top: 12rem;
 }
 
@@ -51,19 +50,22 @@ font-size: 1.5rem;
 }
 
 .pic{
-    margin-left: 2rem;
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    display: flex;
+    justify-content: end;
     /* margin-top: 35px; */
 }
 
 .image{
-    border-radius: 7px;
+    border-radius: 15px;
+    width: 500px;
+    height: 300px;
 }
 
 .para{
-    display: flex;
+    display: block;
     align-items: center;
     font-weight: 500;
     font-size: 1.15rem;
@@ -94,10 +96,13 @@ font-size: 1.5rem;
     }
     .gridContainer{
         margin-top: 10rem;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 60% 40%;
     }
     .pic{
         margin-left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .header3Md{
         font-size: 44px;
@@ -107,10 +112,15 @@ font-size: 1.5rem;
     .para{
         display: block;
         margin-top: 20px;
+        padding-right: 15px;
     }
     .button{
         display: flex;
         margin-top: 18px;
         width: 35%;
+    }
+    .image{
+        width: auto;
+        height: 270px;
     }
 }

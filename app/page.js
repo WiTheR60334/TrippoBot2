@@ -23,9 +23,9 @@ export default function Home() {
       <div id="pricing">
       <Pricing />
       </div>
-      <div style={{marginTop: "15rem"}}>
+      {/* <div style={{marginTop: "15rem"}}>
       <Feedback />
-      </div>
+      </div> */}
     </>
   );
 }
