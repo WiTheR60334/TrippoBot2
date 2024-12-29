@@ -4,7 +4,7 @@
 .homeContainer {
     background-color: white;
     padding-top: 7rem;
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
   }
   
@@ -101,6 +101,9 @@
     /* margin-left: -10rem; */
   }
   
+.bgImage{
+  max-height: 80vh;
+}
   
   
   /* Image styling */
@@ -367,6 +370,12 @@ font-size: 1.25rem;
     font-size: .9rem;
     line-height: 1.5rem;
     border-radius: 7px;
+  }
+}
+
+@media (max-width: 525px){
+  .title{
+    margin-top: 4rem;
   }
 }
 

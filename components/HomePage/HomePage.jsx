@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./HomePage.module.css";
+import  Carousel  from "../Carousel/Carousel";
 import { Helmet } from 'react-helmet';
 import Typed from "typed.js";
 import { useRouter } from "next/router";
@@ -47,6 +48,9 @@ export default function HomePage() {
     <>
       <div className={`${styles.homeContainer} ${styles.bgWhite}`}>
         <div className={styles.innerContainer}>
+          <div className={styles.bgImage}>
+           <Carousel />
+          </div>
           <div className={styles.gridContainer}>
             <div className={styles.textContainer}>
               <h5 className={styles.title}>Discover Trippo</h5>
