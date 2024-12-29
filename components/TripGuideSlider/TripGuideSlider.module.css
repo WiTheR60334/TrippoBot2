@@ -164,4 +164,7 @@ font-size: 1.5rem;
     .pic{
         margin-top: 3rem;
     }
+    .image{
+        height: auto;
+    }
 }
