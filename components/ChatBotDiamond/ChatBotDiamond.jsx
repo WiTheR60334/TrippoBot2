@@ -280,7 +280,6 @@ export default function ChatBot() {
                 } my-2`}              >
               {message.role === "assistant" ? (
                 <div style={{ margin: "1rem 0" }}>
-                  {console.log(message.content)}
                   {formatBotMessage(message.content)}</div>
               ) : (
                 <div
