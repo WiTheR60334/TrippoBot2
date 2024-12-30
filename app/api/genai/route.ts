@@ -262,7 +262,7 @@ const buildGoogleGenAIPrompt2 = (messages: Message[], initialMessage: initialMes
 
 // Fetch flight data from API
 async function fetchFlightData(query: string): Promise<Flight[]> {
-    const flightAPIEndpoint = `http://localhost:8000/api/plane?ans=${encodeURIComponent(query)}`;
+    const flightAPIEndpoint = `https://trippobot.vercel.app/api/flight?ans=${encodeURIComponent(query)}`;
 
     const response = await fetch(flightAPIEndpoint);
     if (!response.ok) {
