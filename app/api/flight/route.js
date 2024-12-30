@@ -130,7 +130,7 @@ const buildGoogleGenAIPrompt = (messages, initialMessage) => {
             "adults": 2,
             "children": 1
           }
-          Dates should be formatted as YYYY-MM-DD (e.g., '23rd December' -> '2025-12-23'). Assume the current year is 2025.
+          Dates should be formatted as YYYY-MM-DD (e.g., '23rd December' -> '2025-12-23'). Current year is 2025, always put the year 2025 in date.
         `,
       };
   

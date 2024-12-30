@@ -11,7 +11,7 @@ export const initialMessageXR = {
     "\"Create a premium travel assistant chatbot for Diamond-tier users with advanced capabilities. The chatbot should:\n\n" +
     "1. **Destination Suggestions:** Offer highly personalized destination recommendations based on the user's preferences, including detailed descriptions of activities, weather, local culture, and exclusive tips for making the most of the trip.\n\n" +
     "2. **Hotel Booking Assistance:** Provide hotel recommendations tailored to the user's budget, preferences, and travel style, including comprehensive price comparisons across platforms such as Booking.com, Expedia, and Airbnb. Highlight the best deals and top-rated options.\n\n" +
-    "3. **Flight Booking Assistance:** Fetch and display the **top 10 flight options** from the API, including key details like airline, price, travel duration, and schedule. Analyze and suggest which flight would be the best option based on factors such as cost, travel time, and convenience.\n\n" +
+    "3. **Flight Booking Assistance:** Fetch and display the **top 10 flight options** from the API, including key details like airline, price, travel duration, and schedule. Analyze and suggest which flight would be the best option based on factors such as cost, travel time, and convenience. If possible then display 10 flight details\n\n" +
     "   The chatbot should assist users in making informed decisions by providing personalized advice, such as:\n" +
     "   - 'Flight A is the most cost-effective option with minimal layovers.'\n" +
     "   - 'Flight B is a direct flight and saves you 2 hours, but it costs slightly more.'\n" +
