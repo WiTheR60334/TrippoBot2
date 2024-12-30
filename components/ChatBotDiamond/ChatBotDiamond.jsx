@@ -3,7 +3,7 @@ import { unstable_noStore as noStore } from 'next/cache';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef  } from "react";
 import { useChat } from "@ai-sdk/react";
 import { AiOutlineSend, AiOutlinePaperClip } from "react-icons/ai";
 import Accordion from "../Accordion/Accordion";
@@ -14,6 +14,7 @@ export default function ChatBot() {
   noStore();
   const [selectedModel, setSelectedModel] = useState("AURA-3.5");
   const [showSuggestions, setShowSuggestions] = useState(true);
+  const chatContainerRef = useRef(null); // Create a reference for the container
 
   const { messages, input, handleInputChange, handleSubmit, isLoading: chatIsLoading } = useChat({
     api: "/api/genai",
@@ -30,6 +31,13 @@ export default function ChatBot() {
       setIsLoading(false); // Set loading to false once the first message is received
     }
   }, [messages, chatIsLoading]);
+
+  useEffect(() => {
+    // Scroll to the bottom whenever messages change
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
+  }, [messages]);
 
   const suggestions = [
     "What is the best time to visit Paris?",
@@ -271,7 +279,7 @@ export default function ChatBot() {
           )}
 
           {/* Chat messages area */}
-          <div className="flex-1 overflow-y-auto md:p-4 p-2 bg-opacity-10 mesh-light backdrop-blur-xl rounded-t-3xl transition-all duration-500 ease-in-out">
+          <div ref={chatContainerRef} className="flex-1 overflow-y-auto md:p-4 p-2 bg-opacity-10 mesh-light backdrop-blur-xl rounded-t-3xl transition-all duration-500 ease-in-out">
             {messages.map((message, index) => (
               <div
                 key={index}

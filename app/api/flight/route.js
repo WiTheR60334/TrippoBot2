@@ -126,11 +126,11 @@ const buildGoogleGenAIPrompt = (messages, initialMessage) => {
           {
             "source": "Ahmedabad",
             "destination": "Goa",
-            "date": "2024-12-23",
+            "date": "2025-12-23",
             "adults": 2,
             "children": 1
           }
-          Dates should be formatted as YYYY-MM-DD (e.g., '23rd December' -> '2024-12-23'). Assume the current year is 2024.
+          Dates should be formatted as YYYY-MM-DD (e.g., '23rd December' -> '2025-12-23'). Assume the current year is 2025.
         `,
       };
   
@@ -182,7 +182,7 @@ const buildGoogleGenAIPrompt = (messages, initialMessage) => {
   
   const searchFlights = async (details) => {
     const url = process.env.RAPIDAPI_URL;
-    
+
     const querystring = {
       fromEntityId: details.source,
       toEntityId: details.destination,
