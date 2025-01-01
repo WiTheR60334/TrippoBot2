@@ -43,7 +43,8 @@ export default function RootLayout({ children }) {
         <Providers>
         <Navbar />
         {children}
-        <div style={{marginTop: "8rem", borderTop: "1px solid #000"}}>
+        <div style={{paddingTop: '8rem', backgroundColor: 'rgb(243 244 246)'}}> </div>
+        <div style={{borderTop: "1px solid #000"}}>
           <Footer />
         </div>
         </Providers>

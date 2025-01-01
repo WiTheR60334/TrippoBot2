@@ -1,0 +1,234 @@
+  .pricingContainer {
+    padding: 50px;
+    padding-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+  }
+  
+  .heading, .header5 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .subHeading {
+    font-size: 18px;
+    margin-bottom: 50px;
+    color: #b0b0b0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    align-items: stretch;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: white;
+  }
+  
+  .cardContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+  }
+  
+  .priceContainer, .priceContainer2 {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    border-radius: 16px;
+    padding: 20px 34px;
+    width: 100%;
+  }
+  
+  .priceContainer {
+    background: rgb(243, 245, 250);
+    border-color: #e2e8f0;
+  }
+  
+  .priceContainer2 {
+    background: linear-gradient(rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.06) 50.63%, rgba(255, 255, 255, 0.03) 100%);
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 8px 25px -4px inset;
+  }
+  
+  .tp {
+    height: 2px;
+    width: 95%;
+    background: linear-gradient(90deg, rgba(14, 165, 233, 0) 0%, rgb(0, 224, 255) 20.66%, rgb(67, 24, 255) 52.95%, rgb(255, 24, 246) 83.16%, rgba(255, 24, 246, 0) 100%);
+    filter: blur(3px);
+    margin-bottom: 20px;
+  }
+  
+  .cardTitle {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .cardDescription {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #a0a0a0;
+  }
+  
+  .price, .price2 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: linear-gradient(119.25deg, rgb(0, 224, 255) 0%, rgb(67, 24, 255) 50.21%, rgb(251, 24, 188) 78.6%) text;
+    color: transparent;
+  }
+
+  .priceTime{
+    font-size: 27px;
+  }
+  
+  .button {
+    width: 100%;
+    padding: 10px 20px;
+    background: #7b47ff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .button:hover {
+    background: #5a36cc;
+  }
+  
+  .featureList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: stretch;
+  }
+  
+  .featureList li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #b0b0b0;
+  }
+  
+  .popular {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 16px;
+    background: radial-gradient(58.11% 44.54% at 51.59% -9.61%, rgb(180, 176, 254) 0%, rgb(54, 50, 133) 22.92%, rgb(17, 13, 91) 42.71%, rgb(5, 3, 39) 88.54%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  }
+  
+  .popularTag {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #7b47ff;
+    color: white;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 15px;
+  }
+
+  .premiumCardTitle {
+    color: white;
+  }
+
+  .header5 {
+    color: #434de7;
+    font-weight: 700;
+    font-family: sans-serif;
+    line-height: 20px;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 7rem;
+    margin-bottom: 5rem;
+  }
+  
+  
+  @media (max-width: 1264px)  and (min-width: 974px){
+    .pricingContainer {
+      width: 100%;
+    }
+    .cardContainer{
+        gap: 2rem;
+    }
+    .price, .price2 {
+      font-size: 30px;
+    }
+    .button {
+      padding: 8px 20px;
+    }
+    .priceTime {
+      font-size: 18px;
+    }   
+  }
+  
+@media (max-width: 974px){
+    .cardContainer {
+      grid-template-columns: 1fr;
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+}
+
+@media (max-width: 580px){
+    .cardContainer {
+        grid-template-columns: 1fr;
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+    .heading, .header5 {
+        font-size: 45px;
+    }
+    .subHeading {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 507px){
+    .heading, .header5{
+        font-size: 35px;
+    }
+    .subHeading {
+        font-size: 14.5px;
+    }
+    .header5{
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 440px){
+    .pricingContainer{
+        width: 100%;
+        padding: 25px;
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width: 362px){
+    .heading, .header5 {
+        font-size: 30px;
+    }
+    .header5{
+        margin-bottom: 2rem;
+    }
+}
