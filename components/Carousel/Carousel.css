@@ -178,8 +178,8 @@ body {
 
 @media (max-width: 1080px) {
   .heading {
-    font-size: 80px !important;
-    width: 80% !important;
+    font-size: 80px;
+    width: 80% ;
   }
   .description {
     font-size: 18px;
