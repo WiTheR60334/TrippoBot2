@@ -146,9 +146,9 @@ export default function Navbar() {
     fetchUserData();
   }, [session]);
 
-  console.log(formData.email);
+  // console.log(formData.email);
   if (status === "authenticated") {
-    console.log(formData.email);
+    // console.log(formData.email);
   }
   else{
     console.log("You are not logged in. Please sign in.");

@@ -17,10 +17,6 @@
   /* width: 100%; */
 }
 
-.logoLEFT{
-  width: 90%;
-}
-
 .logo img {
   width: 30px ;  /* Adjust size */
   height: 30px;  /* Maintain aspect ratio */
@@ -121,7 +117,7 @@
 
 .chatContainer{
   display: flex;
-  width: 70%;
+  width: 75%;
   flex-direction: column;
   justify-content: center;
   margin-left: 5rem;
@@ -266,13 +262,68 @@
   font-weight: bold;
 }
 
+.Suggestions{
+  width: 75%;
+}
+.para{
+  width: 100%;
+}
 
-@media(max-width: 1025px){
+.options{
+  width: 75%;
+}
+
+.accordionMenu{
+  width: 100%;
+}
+
+.tp{
+  width: 100% !important;
+}
+
+.tpp{
+  font-size: 18px;
+}
+
+.text-left{
+  font-size: 18px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+
+@media(max-width: 1441px){
+  .tp{
+    width: 100% !important;
+  }
   .logoLEFT{
     margin-right: 1rem;
+    width: 100%;
   }
   .chatContainer{
     width: 80%;
+    font-size: 18px;
+  }
+  .chatArea{
+    font-size: 18px;
+  }
+  .Suggestions{
+    width: 80%;
+  }
+  .options{
+    width: 80%;
+  }
+  .para{
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .Suggestions{
+    width: 80%;
+  }
+  .para{
+    display: flex;
   }
 }
 
@@ -293,7 +344,16 @@
     margin-right: 1rem;
   }
   .inputt{
-    font-size: 13.5px;
+    font-size: 14px;
+  }
+  .textt{
+    font-size: 14px;
+  }
+  .text-left{
+    font-size: 14px;
+  }
+  .tpp{
+    font-size: 14px;
   }
 }
 @media(max-width: 520px){
@@ -342,13 +402,30 @@
     line-height: 1.5;
     width: 100%;
   }
-  .accordionMenu{
-    width: 90%;
+  .logoContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo{
+    margin-right: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    width: 95%;
+    margin-bottom: .5rem;
+  }
+  .logoLEFT{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 0;
+    width: 95% !important;
   }
 }
 @media(max-width: 410px){
   .containerr{
-    width: 80%;
+    width: 85%;
   }
   .gridd{
     grid-template-columns: 1fr;
@@ -359,9 +436,10 @@
     padding-bottom: 1rem;
     padding-left: 0;
     padding-right: 0;
+    font-size: 13px;
   }
   .logoLEFT{
-    margin-right: 1rem;
+    margin-right: 0;
   }
   .model-btn{
     font-size: 12px;

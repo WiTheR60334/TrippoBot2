@@ -1,0 +1,112 @@
+.tableContainer{
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+    background-color: #f0f4f9;
+    border-radius: 12px;
+}
+
+.containerrr {
+    display: grid;
+    grid-template-columns: min-content 1.75fr 1fr 1.25fr 1.25fr;
+    align-items: center;
+    font-size: 16px;
+    line-height: 1.3;
+    padding: 16px 0;
+    min-height: 72px;
+    width: 100%;
+}
+
+.airline-name{
+    font-size: 0.85rem;
+}
+
+.flight-overview-hidden{
+    display: none;
+}
+
+
+@media(max-width: 1440px){
+    .tableContainer{
+        width: 600px;
+        font-size: 14px;
+    }
+    .flight-overview{
+        font-size: 14px;
+    }
+    .stop-info{
+        font-size: 14px;
+    }
+    .flight-times{
+        font-size: 16px;
+    }
+    .airline-name{
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 1200px){
+    .tableContainer{
+        width: auto;
+    }
+    .containerrr{
+        grid-template-columns: min-content 2fr 1.25fr 1.25fr 1.25fr;
+    }
+}
+
+@media (max-width: 800px){
+    .airline-logo{
+        display: none;
+    }
+    .containerrr {
+        display: grid;
+        grid-template-columns: 1fr auto; 
+        grid-template-rows: auto auto auto;
+        margin-bottom: 1rem;
+    }
+    .airline-name{
+        margin-top: .1rem;
+        font-size: 14px;
+        line-height: 1.3;
+        margin-bottom: .3rem;
+    }
+    .flight-overview {
+        display: none;
+    }
+    .flight-overview-hidden {
+        display: block;
+    }
+
+    .trip-details {
+        grid-column: 1;
+        grid-row: 1;
+        margin: 0 !important;
+    }
+    .flight-times{
+        font-size: 17px;
+        margin-bottom: .3rem;
+    }
+    .stop-info {
+        grid-column: 1;
+        grid-row: 2;
+        display: flex;
+        justify-content: start;
+        font-size: 16px;
+        margin-bottom: .3rem;
+    }
+
+    .flight-overview-hidden {
+        grid-column: 1;
+        grid-row: 3;
+        display: flex;
+        justify-content: start;
+        font-size: 16px;
+    }
+
+    .price {
+        grid-column: 2;
+        grid-row: 1 / 4; 
+        text-align: right;
+        margin-bottom: 0;
+    }
+}

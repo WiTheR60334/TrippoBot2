@@ -249,8 +249,8 @@ const detailsExtractor = async (userQuery) => {
             const formattedFlightNumber = formatFlightNumber(airline, flightNumber);
             const departure = legs.departure;
             const arrival = legs.arrival;
-            const source = legs.origin?.name;
-            const destination = legs.destination?.name;
+            const source = legs.origin?.displayCode;
+            const destination = legs.destination?.displayCode;
             const departureTime = formatDatetime(departure);
             const arrivalTime = formatDatetime(arrival);
   
@@ -308,6 +308,7 @@ const detailsExtractor = async (userQuery) => {
           acc[index] = flight;
           return acc;
         }, {});
+        // console.log('Flight data:', flightDict);
         return new Response(JSON.stringify({ response: flightDict }), {
           status: 200,
           headers: { 'Content-Type': 'application/json' },
