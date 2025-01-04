@@ -224,6 +224,16 @@
     }
 }
 
+@media (max-width: 378px){
+  .priceContainer{
+    padding: 20px 27px;
+    padding-top: 17px;
+  }
+  .priceTime{
+    font-size: 20px;
+  }
+}
+
 @media (max-width: 362px){
     .heading, .header5 {
         font-size: 30px;
